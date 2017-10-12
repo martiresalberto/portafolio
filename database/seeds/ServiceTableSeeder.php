@@ -14,13 +14,13 @@ class ServiceTableSeeder extends Seeder
     {
         $data = array(
 			[
-				'name' 			=> 'CSS3',
-				'slug' 			=> 'CSS3',
-				'description' 	=> 'es un lenguaje usado para definir los estilos en la presentación de la pagina',
-				'image' 		=> 'http://gdurl.com/X-0u',
+				'name' 			=> 'JAVASCRIPT',
+				'slug' 			=> 'JAVASCRIPT',
+				'description' 	=> 'es un lenguaje de programación interpretado, diale...',
+				'image' 		=> 'http://gdurl.com/s_d6',
 				'created_at' 	=> new DateTime,
 				'updated_at' 	=> new DateTime,
-				'category_id' 	=> 1
+				
 			],
 			
 	
