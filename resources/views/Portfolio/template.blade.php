@@ -38,9 +38,7 @@
 
 <body>
 
-        
-        
-     @yield('services')
+    @yield('services')
     
      @yield('Portafolio')
         
@@ -48,7 +46,7 @@
  
      @yield('contact') 
         
-       @include('Portfolio.partials.footer')   
+     @include('Portfolio.partials.footer')   
 
 @section('script')
      <!-- jQuery -->
