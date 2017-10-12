@@ -62,7 +62,7 @@
 <script src="{{ asset('js/jquery.easing.min.js') }}"></script>
 <script src="{{ asset('js/classie.js') }}"></script>
 <script src="{{ asset('js/cbpAnimatedHeader.js') }}"></script>
-<script src="{{ asset('js/circleMenu.min.js') }}"></script>
+
 @show
 
 </body>
