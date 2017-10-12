@@ -19,6 +19,11 @@ class CreateServicesTable extends Migration
             $table->string('slug');
             $table->text('description');
             $table->string('image', 300);
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')
+                  ->references('id')
+                  ->on('categories')
+                  ->onDelete('cascade');
             $table->timestamps();
         });
     }
