@@ -14,10 +14,10 @@ class ServiceTableSeeder extends Seeder
     {
         $data = array(
 			[
-				'name' 			=> 'HTML5',
-				'slug' 			=> 'HTML5',
-				'description' 	=> 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus repellendus doloribus molestias odio nisi! Aspernatur eos saepe veniam quibusdam totam.',
-				'image' 		=> 'http://gdurl.com/LnQQ',
+				'name' 			=> 'CSS3',
+				'slug' 			=> 'CSS3',
+				'description' 	=> 'es un lenguaje usado para definir los estilos en la presentación de la pagina',
+				'image' 		=> 'http://gdurl.com/X-0u',
 				'created_at' 	=> new DateTime,
 				'updated_at' 	=> new DateTime,
 				'category_id' 	=> 1
