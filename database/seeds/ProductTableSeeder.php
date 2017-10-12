@@ -22,7 +22,7 @@ class ProductTableSeeder extends Seeder
 				'visible' 		=> 1,
 				'created_at' 	=> new DateTime,
 				'updated_at' 	=> new DateTime,
-				'category_id' 	=> 1
+				
 			],
 			
 	
