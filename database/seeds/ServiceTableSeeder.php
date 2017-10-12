@@ -20,7 +20,7 @@ class ServiceTableSeeder extends Seeder
 				'image' 		=> 'http://gdurl.com/s_d6',
 				'created_at' 	=> new DateTime,
 				'updated_at' 	=> new DateTime,
-				
+				'category_id' 	=> 3
 			],
 			
 	
