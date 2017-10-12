@@ -30,7 +30,7 @@ class ServiceTableSeeder extends Seeder
 			'image' 		=> 'http://gdurl.com/X-0u',
 			'created_at' 	=> new DateTime,
 			'updated_at' 	=> new DateTime,
-			'category_id' 	=> 2
+			'category_id' 	=> 1
 		],
 		[
 			'name' 			=> 'JAVASCRIPT',
@@ -39,7 +39,7 @@ class ServiceTableSeeder extends Seeder
 			'image' 		=> 'http://gdurl.com/LnQQ',
 			'created_at' 	=> new DateTime,
 			'updated_at' 	=> new DateTime,
-			'category_id' 	=> 3
+			'category_id' 	=> 1
 		],
 		
 
