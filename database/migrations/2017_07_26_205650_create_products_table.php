@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCertificationsTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,16 @@ class CreateCertificationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('certifications', function (Blueprint $table) {
-              $table->increments('id');
+        Schema::create('products', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('name', 255);
             $table->string('slug');
             $table->text('description');
+            $table->decimal('price', 5, 2);
             $table->string('image', 300);
+            $table->boolean('visible');
             $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')
+            $table->dropforeign('category_id')
                   ->references('id')
                   ->on('categories')
                   ->onDelete('cascade');
@@ -35,6 +37,6 @@ class CreateCertificationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('certifications');
+        Schema::dropIfExists('products');
     }
 }
