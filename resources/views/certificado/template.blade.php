@@ -45,19 +45,19 @@
 
 @section('script')
      <!-- jQuery -->
-<script src="js/jquery-1.11.3.min.js"></script>
+<script src="{{ asset('js/jquery-1.11.3.min.js') }}"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="js/agency.js"></script>
+<script src="{{ asset('js/agency.js') }}"></script>
 
 <!-- Plugin JavaScript -->
-<script src="js/jquery.easing.min.js"></script>
-<script src="js/classie.js"></script>
-<script src="js/cbpAnimatedHeader.js"></script>
-<script src="js/circleMenu.min.js"></script>
+<script src="{{ asset('js/jquery.easing.min.js') }}"></script>
+<script src="{{ asset('js/classie.js') }}"></script>
+<script src="{{ asset('js/cbpAnimatedHeader.js') }}"></script>
+
 @show
 
 </body>
