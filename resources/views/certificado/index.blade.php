@@ -16,12 +16,13 @@
                      <div class="col-lg-12">
                         <h2>Mis Certificaciones</h2>
                         <hr class="line01">
-                        <div class="intro">Lorem ipsum dolor sit amet</div>
+                        <div class="intro">Estas son certificaciones que he adquirido a lo largo del aprendizaje Web</div>
                     </div>
                 </div>
                 @foreach($Certification as $certificado)
                 <div class="row">
-                   <div class="col-md-3 col-sm-3 portfolio-item2">
+                   
+                    <div class="col-md-4 col-sm-3 portfolio-item2">
                         <a href="{{ Route('detalle-certificacion', $certificado->slug )}}" class="portfolio-link" data-toggle="modal">
                             
                             <img src="{{ $certificado->image}}" class="img-responsive" alt="">

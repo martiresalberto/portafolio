@@ -23,23 +23,17 @@
 				<h3>{{ $Certification->name }}</h3><hr>
 				<div class="product-info panel">
 					<p>{{ $Certification->description }}</p>
-					<h3>
-						<span class="label label-success">Precio: ${{ number_format($Certification->price,2) }}</span>
-					</h3>
-					<p>
-						<a class="btn btn-warning btn-default" href="">
-							La quiero <i class="fa fa-cart-plus fa-2x"></i>
-						</a>
-					</p>
+					
+	<p>
+	<a class="btn btn-primary" href="{{ route('certificaciones') }}">
+		<i class="fa fa-chevron-circle-left"></i> Regresar
+	</a>
+    </p>
 				</div>
 			</div>	
 		</div>
 	</div><hr>
 
-	<p>
-		<a class="btn btn-primary" href="{{ route('certificaciones') }}">
-			<i class="fa fa-chevron-circle-left"></i> Regresar
-		</a>
-	</p>
+	
 </div>
 @stop
