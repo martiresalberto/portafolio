@@ -8,11 +8,11 @@
 
 @section('Portafolio')
 <div class="container text-center">
-	<div class="page-header">
-	  <h1><i class="fa fa-shopping-cart"></i> Detalle del producto</h1>
+	<div class="page-header" style="margin-top: 12%;">
+	  <h3><i class="fa fa-shopping-cart"></i> Detalles de la Pagina</h3>
 	</div>
 
-	<div class="row">
+	<div class="row" style="margin-top: 10%;">
 		<div class="col-md-6">
 			<div class="product-block">
 				<img src="{{ $product->image }}">
@@ -26,11 +26,7 @@
 					<h3>
 						<span class="label label-success">Precio: ${{ number_format($product->price,2) }}</span>
 					</h3>
-					<p>
-						<a class="btn btn-warning btn-default" href="">
-							La quiero <i class="fa fa-cart-plus fa-2x"></i>
-						</a>
-					</p>
+					
 				</div>
 			</div>	
 		</div>

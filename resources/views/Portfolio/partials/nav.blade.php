@@ -28,12 +28,15 @@
                     <li>
                         <a class="page-scroll" href="#about">Acerca de mi</a>
                     </li>
+                    
+                    <li>
+                        <a class="page-scroll" href="#portfolio2">Certifaciones</a>
+                    </li>
+
                     <li>
                         <a class="page-scroll" href="#contact">Contacto</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="{{ route('certificaciones') }}">Certifaciones</a>
-                    </li>
+                    
                    </ul>
             </div>
             <!-- /.navbar-collapse -->

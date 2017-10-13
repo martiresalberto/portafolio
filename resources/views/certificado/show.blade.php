@@ -1,4 +1,4 @@
-@extends('certificado.template')
+@extends('PortFolio.template')
 
 @section('head')
 @parent
@@ -25,7 +25,7 @@
 					<p>{{ $Certification->description }}</p>
 					
 	<p>
-	<a class="btn btn-primary" href="{{ route('certificaciones') }}">
+	<a class="btn btn-primary" href="{{ route('home') }}">
 		<i class="fa fa-chevron-circle-left"></i> Regresar
 	</a>
     </p>

@@ -44,8 +44,10 @@
         
      @yield('about')
  
+     @yield('certification')
+
      @yield('contact') 
-        
+   
      @include('Portfolio.partials.footer')   
 
 @section('script')
