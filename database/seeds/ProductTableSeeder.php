@@ -29,7 +29,7 @@ class ProductTableSeeder extends Seeder
 				'slug' 			=> 'Tienda-Online',
 				'description' 	=> 'Es una tienda online creada desde 0 con Laravel 5.4 ,php,bootstrap y Javascrip.',
 				'price' 		=> 1800.00,
-				'image' 		=> 'http://gdurl.com/HqGk',
+				'image' 		=> 'http://gdurl.com/o-Ca',
 				'visible' 		=> 1,
 				'created_at' 	=> new DateTime,
 				'updated_at' 	=> new DateTime,
