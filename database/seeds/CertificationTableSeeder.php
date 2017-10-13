@@ -41,7 +41,13 @@ class CertificationTableSeeder extends Seeder
 				'image' 		=> 'http://gdurl.com/h8Ta',
 				
 			],
-			
+			[
+				'name' 			=> 'LARAVEL 5.4',
+				'slug' 			=> 'LARAVEL 5.4',
+				'description' 	=> 'Laravel es uno de los frameworks de código abierto más fáciles de asimilar para PHP. Es simple, muy potente y tiene una interfaz elegante y divertida de usar. Fue creado en 2011 y tiene una gran influencia de frameworks como Ruby on Rails, Sinatra y ASP.NET MVC',
+				'image' 		=> 'http://gdurl.com/kK_f',
+				
+			],
 	
 			
 		);
