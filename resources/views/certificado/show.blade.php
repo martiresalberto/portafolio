@@ -1,4 +1,4 @@
-@extends('PortFolio.template')
+@extends('Portfolio.template')
 
 @section('head')
 @parent
