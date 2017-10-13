@@ -21,14 +21,9 @@
                 </div>
                 @foreach($Certification as $certificado)
                 <div class="row">
-                   
-                    <div class="col-md-3 col-sm-6 portfolio-item2">
+                   <div class="col-md-3 col-sm-3 portfolio-item2">
                         <a href="{{ Route('detalle-certificacion', $certificado->slug )}}" class="portfolio-link" data-toggle="modal">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content">
-                                    <i class="fa fa-eye fa-3x"></i>
-                                </div>
-                            </div>
+                            
                             <img src="{{ $certificado->image}}" class="img-responsive" alt="">
                         </a>
                         <div class="portfolio-caption center">
