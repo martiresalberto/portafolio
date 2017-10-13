@@ -16,14 +16,26 @@ class ProductTableSeeder extends Seeder
 			[
 				'name' 			=> 'Portafolio',
 				'slug' 			=> 'Portafolio',
-				'description' 	=> 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus repellendus doloribus molestias odio nisi! Aspernatur eos saepe veniam quibusdam totam.',
-				'price' 		=> 900.00,
+				'description' 	=> 'Es un portafolio creado desde una plantilla de Bootstrap, con el framework Laravel 5.4 el lenguaje de programacion PHP.',
+				'price' 		=> 1800.00,
 				'image' 		=> 'http://gdurl.com/HqGk',
 				'visible' 		=> 1,
 				'created_at' 	=> new DateTime,
 				'updated_at' 	=> new DateTime,
 				
 			],
+			[
+				'name' 			=> 'Tienda-Online',
+				'slug' 			=> 'Tienda-Online',
+				'description' 	=> 'Es una tienda online creada desde 0 con Laravel 5.4 ,php,bootstrap y Javascrip.',
+				'price' 		=> 1800.00,
+				'image' 		=> 'http://gdurl.com/HqGk',
+				'visible' 		=> 1,
+				'created_at' 	=> new DateTime,
+				'updated_at' 	=> new DateTime,
+				
+			],
+			
 			
 	
 			

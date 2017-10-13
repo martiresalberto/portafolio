@@ -24,7 +24,7 @@
 				<div class="product-info panel">
 					<p>{{ $product->description }}</p>
 					<h3>
-						<span class="label label-success">Precio: ${{ number_format($product->price,2) }}</span>
+						<span class="label label-success">Precio: Q {{ number_format($product->price,2) }}</span>
 					</h3>
 					
 				</div>

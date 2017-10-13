@@ -224,7 +224,16 @@
 <!-- ////////////Contact -->
 <section class="box-content box-style" id="contact">
 <div class="container">
-<div class="row">
+    <div class="row">
+<br>
+
+@if(session()->has('flash'))
+  <div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      {{ session()->get('flash') }}}
+  </div>
+@endif
+
     <div class="col-lg-12 text-center">
         <div class="row heading">
             <h2>Contactame</h2>
@@ -232,19 +241,24 @@
             <div class="intro">Las mejores cosas en la vida no son cosas</div>
         </div>
     </div>
+
+
     <div class="col-md-6 contact-item">
         <div class="row">
             <div class="col-sm-12">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.289259162295!2d-120.7989351!3d37.5246781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8091042b3386acd7%3A0x3b4a4cedc60363dd!2sMain+St%2C+Denair%2C+CA+95316%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1434016649434" width="95%" frameborder="0" style="border:0"></iframe>
+            
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123536.65268311882!2d-90.56260126824222!3d14.626375695534955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a180655c3345%3A0x4a72c7815b867b25!2sGuatemala!5e0!3m2!1ses!2ses!4v1507921393836" width="95%"  frameborder="0" style="border:0" allowfullscreen></iframe>
+                <br>
                 <p>Guatemala , Guatemala.</p>
                 <p>56227500</p>
                 <p>martires@gmail.com</p>
+            
             </div>
         </div>
     </div>
     <div class="col-md-6 contact-item">
 
-{!! Form::open(['route' => 'send.store', 'method' => 'POST']) !!}
+{!! Form::open(['route' => 'messages', 'method' => 'POST']) !!}
 
 {{ csrf_field() }}
 
@@ -252,28 +266,39 @@
 <div class="col-md-6">
     <div class="form-group">
    
-    {!!Form::text('name',null,['placeholder'=> 'Nombre y apellido'])!!}
-      
+    {!!Form::text('name',null,['required' => 'required','placeholder'=> 'Nombre y apellido'])!!}
+              
     </div>
     <div class="form-group">
-      
-       {!!Form::text('email',null,['placeholder'=> 'Email'])!!}
+              
+    {!!Form::text('email',null,['required' => 'required','placeholder'=> 'Email'])!!}
+
     </div>
-    
-</div>
+
+    <div class="form-group">
+              
+    {!!Form::text('subject',null,['required' => 'required','placeholder'=> 'Subject'])!!}
+
+    </div>
+ 
+ </div>
+
 <div class="col-md-6">
     <div class="form-group">
-        
-         {!! Form::textarea('msj',null,['class'=>'form-control','placeholder'=>'Mensaje']) !!}
+            
+    {!! Form::textarea('body',null,['class'=>'form-control','required' => 'required','placeholder'=>'Mensaje']) !!}
+    
     </div>
 </div>
+
 </div>
-<div class="row">
-    <div class="col-lg-12 text-center">
-        <div id="success"></div>
-        <button type="submit" class="btn btn-l">Enviar Mensaje</button>
+    
+    <div class="row">
+            <div class="col-lg-12 text-center">
+                <div id="success"></div>
+                <button type="submit" class="btn btn-l">Enviar Mensaje</button>
+            </div>
     </div>
-</div>
 
 {!!Form::close()!!}
     </div>
