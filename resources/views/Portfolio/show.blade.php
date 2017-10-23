@@ -16,8 +16,10 @@
 		<div class="col-md-6">
 			<div class="product-block">
 				<img src="{{ $product->image }}">
+
 			</div>	
 		</div>
+
 		<div class="col-md-6">
 			<div class="product-block">
 				<h3>{{ $product->name }}</h3><hr>
@@ -26,14 +28,20 @@
 					<h3>
 						<span class="label label-success">Precio: Q {{ number_format($product->price,2) }}</span>
 					</h3>
+
 					
 				</div>
 			</div>	
 		</div>
-	</div><hr>
 
+	</div>
+
+    
+
+	<hr>
+       
 	<p>
-		<a class="btn btn-primary" href="{{ route('home') }}">
+        <a class="btn btn-success" href="{{ route('home') }}">
 			<i class="fa fa-chevron-circle-left"></i> Regresar
 		</a>
 	</p>
