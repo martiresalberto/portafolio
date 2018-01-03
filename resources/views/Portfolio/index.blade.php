@@ -85,11 +85,9 @@
                         </div>
                         <ul class="list-inline social-buttons">
                             
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            <li><a href="https://www.facebook.com/alberto.orozco.56679"><i class="fa fa-facebook"></i></a>
                             </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-google"></i></a>
+                            <li><a href="https://github.com/martiresalberto"><i class="fa fa-github"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -111,7 +109,7 @@
 @stop
 
 
-@section('pricing')
+{{-- @section('pricing')
 
 <!-- ////////////Pricing -->
         <section class="box-content" id="pricing">
@@ -184,7 +182,7 @@
         </section>  
         
 
-@stop
+@stop --}}
 
 @section('certification')
 
