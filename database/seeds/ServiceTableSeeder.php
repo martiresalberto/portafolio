@@ -51,8 +51,8 @@ class ServiceTableSeeder extends Seeder
 				
 			],
 			[
-				'name' 			=> 'LARAVEL 5.3 y 5.4',
-				'slug' 			=> 'LARAVEL 5.3 y 5.4',
+				'name' 			=> 'LARAVEL 5.3 5.4 y 5.5',
+				'slug' 			=> 'LARAVEL 5.3 5.4 y 5.5',
 				'description' 	=> 'Es un framework de código abierto para desarrollar aplicaciones y servicios web con PHP 5 y PHP 7.',
 				'image'         => 'http://gdurl.com/MmJH',
 				
