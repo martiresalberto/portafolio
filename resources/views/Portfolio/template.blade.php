@@ -9,7 +9,7 @@
 
     <title>
     @yield('title')
-    Portafolio|Martires
+    Portafolio|Martires Alberto
     </title>
     
 
