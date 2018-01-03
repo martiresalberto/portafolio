@@ -228,7 +228,7 @@
 @if(session()->has('flash'))
   <div class="alert alert-warning alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      {{ session()->get('flash') }}}
+      {{ session()->get('flash') }}
   </div>
 @endif
 
@@ -247,8 +247,9 @@
             
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123536.65268311882!2d-90.56260126824222!3d14.626375695534955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a180655c3345%3A0x4a72c7815b867b25!2sGuatemala!5e0!3m2!1ses!2ses!4v1507921393836" width="95%"  frameborder="0" style="border:0" allowfullscreen></iframe>
                 <br>
+                <br>
                 <p>Guatemala , Guatemala.</p>
-                <p>56227500</p>
+                <p>(+502)56227500</p>
                 <p>martires@gmail.com</p>
             
             </div>

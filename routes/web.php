@@ -19,6 +19,7 @@ Route::post('message', function(){
 
     
    
- // responderal usuario
+    // responderal usuario
     return back()->with('flash', $data['name'] . ',Tu mensaje a sido recibido');
- })->name('messages');
+
+  })->name('messages');

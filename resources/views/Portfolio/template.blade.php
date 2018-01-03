@@ -7,7 +7,7 @@
     <meta name="description" content="Free Bootstrap Themes Designed by 365bootstrap.com" />
     <meta name="author" content="http://www.365bootstrap.com" />
 
-    <title>
+   <title>
     @yield('title')
     Portafolio|Martires Alberto
     </title>
@@ -37,8 +37,8 @@
 </head>
 
 <body>
-
-    @yield('services')
+     
+     @yield('services')
     
      @yield('Portafolio')
         
