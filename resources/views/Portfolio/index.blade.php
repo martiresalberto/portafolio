@@ -93,7 +93,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="row heading">
-                            <h2>Acerca de Mi</h2>
+                            <h3>Martires Alberto Orozco</h3>
                             <hr class="line02">
                             <div class="intro">{{ $about->name }}</div>
                         </div>
@@ -249,8 +249,7 @@
                 <br>
                 <br>
                 <p>Guatemala , Guatemala.</p>
-                <p>(+502)56227500</p>
-                <p>martires@gmail.com</p>
+                <p>martiresalbertoorozcogonzalez@gmail.com</p>
             
             </div>
         </div>
