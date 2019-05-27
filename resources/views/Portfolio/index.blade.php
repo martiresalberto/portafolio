@@ -93,7 +93,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="row heading">
-                            <h3>Martires Alberto Orozco</h3>
+                            <h4>Martires Alberto Orozco Gonzalez</h4>
                             <hr class="line02">
                             <div class="intro">{{ $about->name }}</div>
                         </div>
