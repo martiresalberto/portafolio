@@ -23,3 +23,7 @@ Route::post('message', function(){
     return back()->with('flash', $data['name'] . ',Tu mensaje a sido recibido');
 
   })->name('messages');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
