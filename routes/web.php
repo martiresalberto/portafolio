@@ -17,8 +17,6 @@ Route::post('message', function(){
 	        ->subject($data['subject']);
 	});
 
-    
-   
     // responderal usuario
     return back()->with('flash', $data['name'] . ',Tu mensaje a sido recibido');
 
@@ -26,4 +24,4 @@ Route::post('message', function(){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('admin');

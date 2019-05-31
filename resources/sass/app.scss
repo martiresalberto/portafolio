@@ -3,7 +3,62 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
-@import "variables";
+$fa-font-path: "../webfonts";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import '~bootstrap/scss/bootstrap';
+@import '~admin-lte/dist/css/adminlte.css';
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66D9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+ 
+.blue
+{
+  color: $blue;	
+}
+
+.red
+{
+  color: $red;	
+}
+
+.orange
+{
+  color: $orange;	
+}
+
+.green
+{
+	color: $green;
+}
+
+.teal
+{
+	color: $teal;
+}
+
+.purple
+{
+	color: $purple;
+}
+
+.yellow
+{
+	color: $yellow;
+}
