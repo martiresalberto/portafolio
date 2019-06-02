@@ -7,13 +7,10 @@
     <meta name="description" content="Free Bootstrap Themes Designed by 365bootstrap.com" />
     <meta name="author" content="http://www.365bootstrap.com" />
 
-   <title>
-    @yield('title')
-    Portafolio|Martires Alberto
-    </title>
+   <title>Portafolio|Martires Alberto</title>
     
 
-    @section('head')
+  
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -33,10 +30,10 @@
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>
     <![endif]-->
-    @show 
+ 
 </head>
 
-<body style="overflow-x:hidden; ">
+<body style="overflow-x:hidden;">
      
      @yield('services')
     
@@ -50,7 +47,7 @@
    
      @include('Portfolio.partials.footer')   
 
-@section('script')
+
      <!-- jQuery -->
 <script src="{{ asset('js/jquery-1.11.3.min.js') }}"></script>
 
@@ -65,7 +62,7 @@
 <script src="{{ asset('js/classie.js') }}"></script>
 <script src="{{ asset('js/cbpAnimatedHeader.js') }}"></script>
 
-@show
+
 
 </body>
 

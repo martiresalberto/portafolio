@@ -25,3 +25,5 @@ Route::post('message', function(){
 Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->name('admin');
+
+Route::get('{path}',"HomeController@index")->where( 'path', '([A-z\d-\/_.]+)?' );

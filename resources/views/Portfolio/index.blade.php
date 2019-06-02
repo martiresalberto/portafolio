@@ -1,110 +1,114 @@
 @extends('Portfolio.template')
 
-@section('head')
- @parent
-@stop
+
 
 @include('Portfolio.partials.nav') 
 
 @section('services')
 <!-- ////////////Services -->
-        <section class="box-content " id="services">
-            <div class="container" style="margin-top: 20px;">
-                <div class="row heading">
-                     <div class="col-lg-12">
-                        <h2>Mis Habilidades</h2>
-                        <hr class="line02">
-                        <div class="intro">FRONT-END | BACK-END</div>
-                    </div>
-                </div>
+<section class="box-content" id="services">
 
-            
-                <div class="row">
-                @foreach($services as $service)  
-                    <div class="col-sm-4 services-item">
-                        <div class="wrap-img">
-                            <img src="{{ $service->image}}">
-                        </div>
-                        <h3 class="services-heading">{{ $service->name }}</h3>
-                        <p>{{ $service->description }}</p>
-                        
-                    </div>
-                @endforeach()
-                </div>
-             
+    <div class="container" style="margin-top: 20px;">
+        <div class="row heading">
+             <div class="col-lg-12">
+                <h2>Mis Habilidades</h2>
+                <hr class="line02">
+                <div class="intro">FRONT-END | BACK-END</div>
             </div>
-        </section>
-        
+        </div>
+
+    
+        <div class="row">
+       
+            <div class="col-sm-4 services-item">
+                <div class="wrap-img">
+
+                    <img src="images/servicios/HTML5.png">
+                </div>
+                <h3 class="services-heading">HTML5</h3>
+
+                <p>HTML5 es la última versión de HTML.El término representa dos conceptos diferentes:Se trata de una nueva versión con nuevos elementos, atributos</p>
+                
+            </div>
+        </div>
+    </div>
+
+</section>
+
        
 @stop
 
 @section('Portafolio')
 <!-- ////////////Portfolio -->
-        <section class="box-content box-style" id="portfolio">
-            <div class="container">
-                <div class="row heading">
-                     <div class="col-lg-12">
-                        <h2>Mi Portafolio</h2>
-                        <hr class="line01">
-                        <div class="intro">PAGINAS | PLANTILLAS</div>
-                    </div>
-                </div>
-                <div class="row">
-
-                    @foreach($products as $product)
-
-                   <div class="col-md-3 col-sm-6 portfolio-item">
-                        <a href="{{ Route('detalle-portafolio', $product->slug )}}" class="portfolio-link" data-toggle="modal">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content">
-                                    <i class="fa fa-eye fa-3x"></i>
-                                </div>
-                            </div>
-                            <img src="{{ $product->image }}" class="img-responsive" alt="">
-                        </a>
-                        
-                    </div>
-                    @endforeach()
-                    
-                </div>
+<section class="box-content box-style" id="portfolio">
+   
+    <div class="container">
+        <div class="row heading">
+             <div class="col-lg-12">
+                <h2>Mi Portafolio</h2>
+                <hr class="line01">
+                <div class="intro">PAGINAS | PLANTILLAS</div>
             </div>
-        </section>
+        </div>
+        <div class="row">
+
+
+
+           <div class="col-md-3 col-sm-6 portfolio-item">
+                <a href="" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-eye fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="images/portafolio/image1.png" class="img-responsive" alt="">
+                </a>
+                
+            </div>
+          
+            
+        </div>
+    </div>
+
+</section>
         
 @stop
 
 @section('about')
 
 <!-- ////////////About -->
-        <section class="box-content" id="about">
-            <div class="container">
-                <div class="row center">
-                    <div class="col-md-6">
-                    @foreach($abouts as $about)
-                        <div class="wrap-img">
-                            <img src="{{ $about->image }}">
-                        </div>
-                        <ul class="list-inline social-buttons">
-                            
-                            <li><a href="https://www.facebook.com/alberto.orozco.56679"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="https://github.com/martiresalberto"><i class="fa fa-github"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row heading">
-                            <h4>Martires Alberto Orozco Gonzalez</h4>
-                            <hr class="line02">
-                            <div class="intro">{{ $about->name }}</div>
-                        </div>
-                        <div class="row">
-                            <p>{{ $about->description }}</p>
-                        </div>
-                    @endforeach()
-                    </div>
+<section class="box-content" id="about">
+   
+    <div class="container">
+        <div class="row center">
+            <div class="col-md-6">
+            @foreach($abouts as $about)
+                <div class="wrap-img">
+                    <img src="images/miperfil/default.png">
                 </div>
+                <ul class="list-inline social-buttons">
+                    
+                    <li><a href="https://www.facebook.com/alberto.orozco.56679"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="https://github.com/martiresalberto"><i class="fa fa-github"></i></a>
+                    </li>
+                </ul>
             </div>
-        </section>
+            <div class="col-md-6">
+                <div class="row heading">
+                    <h4>Martires Alberto Orozco Gonzalez</h4>
+                    <hr class="line02">
+                    <div class="intro">{{ $about->name }}</div>
+                </div>
+                <div class="row">
+                    <p>{{ $about->description }}</p>
+                </div>
+            @endforeach()
+            </div>
+        </div>
+    </div>
+
+</section>
         
 @stop
 
@@ -188,33 +192,33 @@
 
 <!-- ////////////Portfolio -->
 
-        <section class="box-content box-style" id="portfolio2">
-            <div class="container" style="margin-top: 40px;">
-                <div class="row heading">
-                     <div class="col-lg-12">
-                        <h2>Mis Certificaciones</h2>
-                        <hr class="line01">
-                        <div class="intro">Estas son certificaciones que he adquirido a lo largo del aprendizaje Web</div>
-                    </div>
-                </div>
-                @foreach($Certification as $certificado)
-                <div class="row">
-                   
-                    <div class="col-md-4 col-sm-3 portfolio-item2">
-                        <a href="{{ Route('detalle-certificacion', $certificado->slug )}}" class="portfolio-link" data-toggle="modal">
-                            
-                            <img src="{{ $certificado->image}}" class="img-responsive" alt="">
-                        </a>
-                        <div class="portfolio-caption center">
-                            <h4>{{ $certificado->name}}</h4>
-                            
-                        </div>
-                    </div>
-                   @endforeach() 
+<section class="box-content box-style" id="portfolio2">
+    <div class="container" style="margin-top: 40px;">
+        <div class="row heading">
+             <div class="col-lg-12">
+                <h2>Mis Certificaciones</h2>
+                <hr class="line01">
+                <div class="intro">Estas son certificaciones que he adquirido a lo largo del aprendizaje Web</div>
+            </div>
+        </div>
+       
+        <div class="row">
+           
+            <div class="col-md-4 col-sm-3 portfolio-item2">
+                <a href="" class="portfolio-link" data-toggle="modal">
+                    
+                    <img src="images/certificados/0001.jpg" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption center">
+                    <h4>Ecommerce</h4>
                     
                 </div>
             </div>
-        </section>
+          
+            
+        </div>
+    </div>
+</section>
         
 @stop
 
@@ -308,9 +312,3 @@
 
 @stop
 
-
-
-
-@section('script')
-  @parent
-@stop

@@ -3,18 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\User;
 
 class Certification extends Model
 {
      protected $table = 'certifications';
 
-	protected $fillable = ['name', 'slug', 'description',  'image',  'category_id'];
+	protected $fillable = ['name', 'slug', 'description',  'imgCertificacion', 'user_id'];
 
     
     // Relation with Category
-    public function category()
+    public function user()
     {
-        return $this->belongsTo('prueba\Category');
+        return $this->belongsTo('App\User');
     }
 }
