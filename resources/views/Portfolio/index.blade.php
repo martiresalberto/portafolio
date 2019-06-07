@@ -19,17 +19,18 @@
 
     
         <div class="row">
-       
+            @foreach($services as $ser)
             <div class="col-sm-4 services-item">
                 <div class="wrap-img">
 
-                    <img src="images/servicios/HTML5.png">
+                    <img src="/images/servicios/{{ $ser->imgServicio }}">
                 </div>
-                <h3 class="services-heading">HTML5</h3>
+                <h3 class="services-heading">{{ $ser->name }}</h3>
 
-                <p>HTML5 es la última versión de HTML.El término representa dos conceptos diferentes:Se trata de una nueva versión con nuevos elementos, atributos</p>
+                <p>{{ $ser->description }}</p>
                 
             </div>
+            @endforeach
         </div>
     </div>
 
@@ -52,7 +53,7 @@
         </div>
         <div class="row">
 
-
+           @foreach($products as $pro)
 
            <div class="col-md-3 col-sm-6 portfolio-item">
                 <a href="" class="portfolio-link" data-toggle="modal">
@@ -61,11 +62,12 @@
                             <i class="fa fa-eye fa-3x"></i>
                         </div>
                     </div>
-                    <img src="images/portafolio/image1.png" class="img-responsive" alt="">
+                    <img src="images/portafolio/{{ $pro->imgProducto }}" class="img-responsive" alt="">
                 </a>
                 
             </div>
           
+           @endforeach
             
         </div>
     </div>
@@ -84,7 +86,7 @@
             <div class="col-md-6">
             @foreach($abouts as $about)
                 <div class="wrap-img">
-                    <img src="images/miperfil/default.png">
+                    <img src="">
                 </div>
                 <ul class="list-inline social-buttons">
                     
@@ -194,11 +196,12 @@
 
 <section class="box-content box-style" id="portfolio2">
     <div class="container" style="margin-top: 40px;">
+        @foreach($certification as $cert)
         <div class="row heading">
              <div class="col-lg-12">
                 <h2>Mis Certificaciones</h2>
                 <hr class="line01">
-                <div class="intro">Estas son certificaciones que he adquirido a lo largo del aprendizaje Web</div>
+                <div class="intro">Estas son certificaciones que he adquirido a lo largo del aprendizaje de la programacion Web</div>
             </div>
         </div>
        
@@ -207,16 +210,17 @@
             <div class="col-md-4 col-sm-3 portfolio-item2">
                 <a href="" class="portfolio-link" data-toggle="modal">
                     
-                    <img src="images/certificados/0001.jpg" class="img-responsive" alt="">
+                    <img src="images/certificados/{{ $cert->imgCertificacion}}" class="img-responsive" alt="">
                 </a>
                 <div class="portfolio-caption center">
-                    <h4>Ecommerce</h4>
+                    <h4>{{ $cert->name }}</h4>
                     
                 </div>
             </div>
           
             
         </div>
+        @endforeach
     </div>
 </section>
         

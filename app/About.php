@@ -9,7 +9,7 @@ class About extends Model
 {
      protected $table = 'abouts';
 
-	protected $fillable = ['name', 'slug', 'description','user_id'];
+	protected $fillable = ['name', 'description','user_id'];
 
 
 

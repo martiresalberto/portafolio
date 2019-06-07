@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Product;
 
 class MiPortafolioController extends Controller
 {
@@ -14,7 +15,7 @@ class MiPortafolioController extends Controller
      */
     public function index()
     {
-        //
+        return Product::latest()->paginate(10);
     }
 
     /**
@@ -25,7 +26,33 @@ class MiPortafolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+             'name' => 'required|string|max:191',
+             'description' => 'required',
+             'user_id' => 'required',
+             'price' => 'required',
+             'imgProducto' => 'required'
+            
+        ]);
+ 
+       if($request->imgProducto){
+
+            $name = time().'.' .explode('/', explode(':', substr($request->imgProducto, 0, strpos
+            ($request->imgProducto, ';')))[1])[1];    
+
+            \Image::make($request->imgProducto)->save(public_path('images/portafolio/').$name);      
+            $request->merge(['imgProducto' => $name]);
+            
+
+       }
+
+        return Product::create([
+            'name' => $request['name'],
+            'description' => $request['description'],
+            'user_id' => $request['user_id'],
+            'price' => $request['price'],
+            'imgProducto' => $request['imgProducto'],
+        ]);
     }
 
     /**
@@ -48,7 +75,34 @@ class MiPortafolioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+          $this->validate($request,[
+             'name' => 'required|string|max:191',
+             'description' => 'required',
+             'user_id' => 'required',
+             'price' => 'required',
+             'imgProducto' => 'required'
+            
+        ]);
+       
+        $portafolio = Product::findOrFail($id);
+        
+        $currentimgProducto = $portafolio->imgProducto;
+       
+
+       if($request->imgProducto != $currentimgProducto){
+
+            $name = time().'.' .explode('/', explode(':', substr($request->imgProducto, 0, strpos
+            ($request->imgProducto, ';')))[1])[1];    
+
+            \Image::make($request->imgProducto)->save(public_path('images/portafolio/').$name);      
+            $request->merge(['imgProducto' => $name]);
+            
+
+       }
+
+       $portafolio->update($request->all());
+
+       return ['message' => "Succes"];
     }
 
     /**
@@ -59,6 +113,11 @@ class MiPortafolioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $portafolio = Product::findOrFail($id);
+
+        // delete the user
+        $portafolio->delete();
+
+        return ['mesaage' => 'Portafolio Delete'];
     }
 }

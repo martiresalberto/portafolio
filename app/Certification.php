@@ -9,7 +9,7 @@ class Certification extends Model
 {
      protected $table = 'certifications';
 
-	protected $fillable = ['name', 'slug', 'description',  'imgCertificacion', 'user_id'];
+	protected $fillable = ['name', 'description',  'imgCertificacion', 'user_id'];
 
     
     // Relation with Category

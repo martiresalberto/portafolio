@@ -9,7 +9,7 @@ class Service extends Model
 {
      protected $table = 'services';
 
-	protected $fillable = ['name', 'slug', 'description',  'imgServicio', 'user_id'];
+	protected $fillable = ['name', 'description',  'imgServicio', 'user_id'];
 
     
     // Relation with Category

@@ -16,12 +16,13 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 255);
-            $table->string('slug');
             $table->text('description');
             $table->string('imgServicio')->default('default.png');
 
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+
+            $table->timestamps();
 
         });
     }

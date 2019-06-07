@@ -16,11 +16,12 @@ class CreateAboutsTable extends Migration
         Schema::create('abouts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 255);
-            $table->string('slug');
             $table->text('description');
 
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+
+            $table->timestamps();
         });
     }
 

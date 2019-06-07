@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Certification;
 
 class CertificacionesController extends Controller
 {
@@ -14,7 +15,7 @@ class CertificacionesController extends Controller
      */
     public function index()
     {
-        //
+        return Certification::latest()->paginate(10);
     }
 
     /**
@@ -25,7 +26,31 @@ class CertificacionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+             'name' => 'required|string|max:191',
+             'description' => 'required',
+             'user_id' => 'required',
+             'imgCertificacion' => 'required'
+            
+        ]);
+ 
+       if($request->imgCertificacion){
+
+            $name = time().'.' .explode('/', explode(':', substr($request->imgCertificacion, 0, strpos
+            ($request->imgCertificacion, ';')))[1])[1];    
+
+            \Image::make($request->imgCertificacion)->save(public_path('images/certificados/').$name);      
+            $request->merge(['imgCertificacion' => $name]);
+            
+
+       }
+
+        return Certification::create([
+            'name' => $request['name'],
+            'description' => $request['description'],
+            'user_id' => $request['user_id'],
+            'imgCertificacion' => $request['imgCertificacion'],
+        ]);
     }
 
     /**
@@ -48,7 +73,32 @@ class CertificacionesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+          $this->validate($request,[
+             'name' => 'required|string|max:191',
+             'description' => 'required',
+             'user_id' => 'required',
+             'imgCertificacion' => 'required'
+        ]);
+       
+        $certificado = Certification::findOrFail($id);
+        
+        $currentimgCertificacion = $certificado->imgCertificacion;
+       
+
+       if($request->imgCertificacion != $currentimgCertificacion){
+
+            $name = time().'.' .explode('/', explode(':', substr($request->imgCertificacion, 0, strpos
+            ($request->imgCertificacion, ';')))[1])[1];    
+
+            \Image::make($request->imgCertificacion)->save(public_path('images/certificados/').$name);      
+            $request->merge(['imgCertificacion' => $name]);
+            
+
+       }
+
+       $certificado->update($request->all());
+
+       return ['message' => "Succes"];
     }
 
     /**
@@ -59,6 +109,11 @@ class CertificacionesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $certificado = Certification::findOrFail($id);
+
+        // delete the user
+        $certificado->delete();
+
+        return ['mesaage' => 'Certificado Delete'];
     }
 }
