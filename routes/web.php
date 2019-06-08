@@ -13,7 +13,7 @@ Route::post('message', function(){
 	$data = request()->all();
 	Mail::send('mails.message',$data, function($message) use ($data){
 	$message->from($data['email'],$data['name'])
-	        ->to('perfuventasgt@gmail.com','Alberto')
+	        ->to('martiresalbertoorozcogonzalez@gmail.com','Alberto')
 	        ->subject($data['subject']);
 	});
 

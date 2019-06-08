@@ -15,7 +15,7 @@ class MiPerfilController extends Controller
      */
     public function index()
     {
-        //
+        return User::latest()->paginate(10);
     }
 
     /**
@@ -26,7 +26,27 @@ class MiPerfilController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+             'name' => 'required|string|max:191',
+             'email' => 'required',
+            
+        ]);
+ 
+       if($request->imgPerfil){
+
+            $name = time().'.' .explode('/', explode(':', substr($request->imgPerfil, 0, strpos
+            ($request->imgPerfil, ';')))[1])[1];    
+
+            \Image::make($request->imgPerfil)->save(public_path('images/miperfi/').$name);      
+            $request->merge(['imgPerfil' => $name]);
+            
+
+       }
+
+        return User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+        ]);
     }
 
     /**
@@ -49,7 +69,31 @@ class MiPerfilController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+          $this->validate($request,[
+             'name' => 'required|string|max:191',
+             'email' => 'required',
+            
+        ]);
+       
+        $perfil = User::findOrFail($id);
+        
+        $currentimgPerfil = $perfil->imgPerfil;
+       
+
+       if($request->imgPerfil != $currentimgPerfil){
+
+            $name = time().'.' .explode('/', explode(':', substr($request->imgPerfil, 0, strpos
+            ($request->imgPerfil, ';')))[1])[1];    
+
+            \Image::make($request->imgPerfil)->save(public_path('images/miperfil/').$name);      
+            $request->merge(['imgPerfil' => $name]);
+            
+
+       }
+
+       $perfil->update($request->all());
+
+       return ['message' => "Succes"];
     }
 
     /**
@@ -60,6 +104,11 @@ class MiPerfilController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $perfil = User::findOrFail($id);
+
+        // delete the user
+        $perfil->delete();
+
+        return ['mesaage' => 'Pefil Delete'];
     }
 }

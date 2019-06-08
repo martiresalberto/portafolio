@@ -80,22 +80,6 @@
     </div>
     </div>
 
-    <div class="col-lg-6 mt-4">
-    <div class="card card-primary card-outline">
-      <div class="card-header">
-        <h5 class="m-0">Usuarios</h5>
-      </div>
-      <div class="card-body">
-        <h6 class="card-title">Administra o edita tus Usuarios</h6>
-         <router-link to="/usuarios" class="btn btn-primary">
-          <i class="nav-icon fas fa-users yellow"></i> 
-            Entrar
-        </router-link>
-      </div>
-    </div>
-    </div>
-
-        
   </div>
 </div>
 </template>

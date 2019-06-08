@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 
-Route::apiResource('/miperfil','API\MiPerfilController');
+
+Route::apiResource('/perfil', 'API\MiPerfilController');
 
 Route::apiResource('/habilidad','API\HabilidadesController');
 
@@ -12,3 +13,5 @@ Route::apiResource('/acercademi','API\AcercademiController');
 
 Route::apiResource('/certificado','API\CertificacionesController');
  
+
+

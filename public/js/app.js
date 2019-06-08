@@ -72306,22 +72306,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -72483,32 +72467,6 @@ var render = function() {
             1
           )
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-6 mt-4" }, [
-        _c("div", { staticClass: "card card-primary card-outline" }, [
-          _vm._m(5),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "card-body" },
-            [
-              _c("h6", { staticClass: "card-title" }, [
-                _vm._v("Administra o edita tus Usuarios")
-              ]),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                { staticClass: "btn btn-primary", attrs: { to: "/usuarios" } },
-                [
-                  _c("i", { staticClass: "nav-icon fas fa-users yellow" }),
-                  _vm._v(" \r\n            Entrar\r\n        ")
-                ]
-              )
-            ],
-            1
-          )
-        ])
       ])
     ])
   ])
@@ -72552,14 +72510,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
       _c("h5", { staticClass: "m-0" }, [_vm._v("Certificaciones")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("h5", { staticClass: "m-0" }, [_vm._v("Usuarios")])
     ])
   }
 ]
@@ -72714,73 +72664,119 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            form: new Form({
-                id: '',
-                name: '',
-                email: '',
-                password: '',
-                imgPerfil: ''
-            })
+  data: function data() {
+    return {
+      editmode: false,
+      perfil: {},
+      form: new Form({
+        id: '',
+        name: '',
+        email: '',
+        password: '',
+        imgPerfil: ''
+      })
+    };
+  },
+
+  methods: {
+    updateimgPerfil: function updateimgPerfil(e) {
+      var _this = this;
+
+      var file = e.target.files[0];
+      // console.log(file);
+      var reader = new FileReader();
+      // let vm = this;
+      if (file['size'] < 2111775) {
+        reader.onloadend = function (file) {
+          // console.log('RESULT', reader.result)
+          _this.form.imgPerfil = reader.result;
         };
-    },
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    },
-
-
-    methods: {
-        getProfilePhoto: function getProfilePhoto() {
-
-            var imgPerfil = this.form.imgPerfil.length > 200 ? this.form.imgPerfil : "images/miperfil/" + this.form.imgPerfil;
-            return imgPerfil;
-        },
-        updateInfo: function updateInfo() {
-            var _this = this;
-
-            this.$Progress.start();
-            this.form.put('api/miperfil').then(function () {
-
-                Fire.$emit('AfterCreated');
-                _this.$Progress.finish();
-            }).catch(function () {
-                _this.$Progress.fail();
-            });
-        },
-        updateProfile: function updateProfile(e) {
-            var _this2 = this;
-
-            var file = e.target.files[0];
-            // console.log(file);
-            var reader = new FileReader();
-            // let vm = this;
-            if (file['size'] < 2111775) {
-                reader.onloadend = function (file) {
-                    // console.log('RESULT', reader.result)
-                    _this2.form.imgPerfil = reader.result;
-                };
-                reader.readAsDataURL(file);
-            } else {
-                swal({
-                    type: 'error',
-                    title: 'Oops...',
-                    text: 'You are uploading a large file'
-                });
-            }
-        }
-    },
-
-    created: function created() {
-        var _this3 = this;
-
-        axios.get("api/miperfil").then(function (_ref) {
-            var data = _ref.data;
-            return _this3.form.fill(data);
+        reader.readAsDataURL(file);
+      } else {
+        swal({
+          type: 'error',
+          title: 'Oops...',
+          text: 'You are uploading a large file'
         });
+      }
+    },
+    updatePerfil: function updatePerfil() {
+      var _this2 = this;
+
+      // console.log('editando la categoria');
+      this.$Progress.start();
+      // console.log('Editing data');    
+      this.form.put('api/perfil/' + this.form.id).then(function () {
+        //succes
+        $('#addNew').modal('hide');
+        Swal.fire('Updated!', 'Perfil has been Updated.', 'success');
+        _this2.$Progress.finish();
+        Fire.$emit('AfterCreated');
+      }).catch(function () {
+        _this2.$Progress.fail();
+      });
+    },
+    editModal: function editModal(pro) {
+      this.editmode = true;
+      this.form.reset();
+      $('#addNew').modal('show');
+      this.form.fill(pro);
+    },
+    loadPerfil: function loadPerfil() {
+      var _this3 = this;
+
+      axios.get("api/perfil").then(function (_ref) {
+        var data = _ref.data;
+        return _this3.perfil = data.data;
+      });
+    },
+    crearPerfil: function crearPerfil() {
+      var _this4 = this;
+
+      this.$Progress.start();
+
+      this.form.post('api/perfil').then(function () {
+        Fire.$emit('AfterCreated');
+
+        $('#addNew').modal('hide');
+
+        toast({
+          type: 'success',
+          title: 'Perfil created in successfully'
+        });
+
+        _this4.$Progress.finish();
+      }).catch(function () {});
     }
+  },
+  created: function created() {
+    var _this5 = this;
+
+    this.loadPerfil();
+    Fire.$on('AfterCreated', function () {
+      _this5.loadPerfil();
+    });
+    // setInterval(() => this.loadCategory(), 3000);
+  }
 });
 
 /***/ }),
@@ -72791,49 +72787,128 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container-fluid mt-4" }, [
+  return _c("div", { staticClass: "container mt-4" }, [
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-11" }, [
+      _c("div", { staticClass: "col-12" }, [
         _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-body box-profile" }, [
-                _c("div", { staticClass: "text-center" }, [
-                  _c("img", {
-                    staticClass: "profile-user-img img-fluid img-circle",
-                    attrs: {
-                      src: _vm.getProfilePhoto(),
-                      alt: "User profile picture"
-                    }
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body table-responsive p-0" }, [
+            _c("table", { staticClass: "table table-hover" }, [
+              _c(
+                "tbody",
+                [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _vm._l(_vm.perfil, function(pro) {
+                    return _c("tr", { key: pro.id }, [
+                      _c("td", [_vm._v(_vm._s(pro.id))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(pro.name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(pro.email))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(pro.imgPerfil))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "#" },
+                            on: {
+                              click: function($event) {
+                                return _vm.editModal(pro)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fas fa-edit blue" })]
+                        )
+                      ])
+                    ])
                   })
-                ]),
-                _vm._v(" "),
-                _c("h3", { staticClass: "profile-username text-center" }, [
-                  _vm._v(_vm._s(this.form.name))
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-muted text-center" }, [
-                  _vm._v("Software Engineer")
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "tab-content" }, [
-              _c("div", { staticClass: "tab-pane active show" }, [
-                _c("form", { staticClass: "form-horizontal" }, [
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "label",
+                ],
+                2
+              )
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "addNew",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "addNew",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "modal-dialog modal-dialog-centered",
+            attrs: { role: "document" }
+          },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _c("div", { staticClass: "modal-header" }, [
+                _c(
+                  "h5",
+                  {
+                    directives: [
                       {
-                        staticClass: "col-sm-2 control-label",
-                        attrs: { for: "inputName" }
-                      },
-                      [_vm._v("Name")]
-                    ),
-                    _vm._v(" "),
+                        name: "show",
+                        rawName: "v-show",
+                        value: !_vm.editmode,
+                        expression: "!editmode"
+                      }
+                    ],
+                    staticClass: "modal-title",
+                    attrs: { id: "addNewLabel" }
+                  },
+                  [_vm._v("Agregar Perfil")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "h5",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.editmode,
+                        expression: "editmode"
+                      }
+                    ],
+                    staticClass: "modal-title",
+                    attrs: { id: "addNewLabel" }
+                  },
+                  [_vm._v("Editar Perfil")]
+                ),
+                _vm._v(" "),
+                _vm._m(2)
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }, [
+                _c(
+                  "form",
+                  {
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        _vm.editmode ? _vm.updatePerfil() : _vm.crearPerfil()
+                      }
+                    }
+                  },
+                  [
                     _c(
                       "div",
-                      { staticClass: "col-sm-10" },
+                      { staticClass: "form-group" },
                       [
                         _c("input", {
                           directives: [
@@ -72847,9 +72922,9 @@ var render = function() {
                           staticClass: "form-control",
                           class: { "is-invalid": _vm.form.errors.has("name") },
                           attrs: {
-                            type: "email",
-                            id: "inputName",
-                            placeholder: "Name"
+                            type: "text",
+                            name: "name",
+                            placeholder: "name"
                           },
                           domProps: { value: _vm.form.name },
                           on: {
@@ -72867,24 +72942,13 @@ var render = function() {
                         })
                       ],
                       1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "label",
-                      {
-                        staticClass: "col-sm-2 control-label",
-                        attrs: { for: "inputEmail" }
-                      },
-                      [_vm._v("Email")]
                     ),
                     _vm._v(" "),
                     _c(
                       "div",
-                      { staticClass: "col-sm-10" },
+                      { staticClass: "form-group" },
                       [
-                        _c("input", {
+                        _c("textarea", {
                           directives: [
                             {
                               name: "model",
@@ -72896,9 +72960,10 @@ var render = function() {
                           staticClass: "form-control",
                           class: { "is-invalid": _vm.form.errors.has("email") },
                           attrs: {
-                            type: "email",
-                            id: "inputEmail",
-                            placeholder: "Email"
+                            type: "text",
+                            placeholder: "email",
+                            name: "email",
+                            rows: "3"
                           },
                           domProps: { value: _vm.form.email },
                           on: {
@@ -72916,115 +72981,117 @@ var render = function() {
                         })
                       ],
                       1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "label",
-                      {
-                        staticClass: "col-sm-12 control-label",
-                        attrs: { for: "passpord" }
-                      },
-                      [
-                        _vm._v(
-                          "Passport (leave empty if not changing)\r\n                  "
-                        )
-                      ]
                     ),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-sm-12" },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.form.password,
-                              expression: "form.password"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          class: {
-                            "is-invalid": _vm.form.errors.has("password")
-                          },
-                          attrs: {
-                            type: "passpord",
-                            id: "passpord",
-                            placeholder: "Passport"
-                          },
-                          domProps: { value: _vm.form.password },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.form,
-                                "password",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("has-error", {
-                          attrs: { form: _vm.form, field: "password" }
-                        })
-                      ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c(
-                      "label",
-                      {
-                        staticClass: "col-sm-2 control-label",
-                        attrs: { for: "imgPerfil" }
-                      },
-                      [_vm._v("ImgPerfil")]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-sm-12" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "imgPerfil" } }, [
+                        _vm._v("imgPerfil")
+                      ]),
+                      _vm._v(" "),
                       _c("input", {
                         staticClass: "form-input",
-                        attrs: { type: "file" },
-                        on: { change: _vm.updateProfile }
+                        attrs: { type: "file", name: "imgPerfil" },
+                        on: { change: _vm.updateimgPerfil }
                       })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group" }, [
-                    _c("div", { staticClass: "col-sm-offset-2 col-sm-10" }, [
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "modal-footer" }, [
                       _c(
                         "button",
                         {
                           staticClass: "btn btn-danger",
-                          attrs: { type: "submit" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.updateInfo($event)
-                            }
-                          }
+                          attrs: { type: "button", "data-dismiss": "modal" }
                         },
-                        [_vm._v("Actualizar")]
+                        [_vm._v("Cancelar")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.editmode,
+                              expression: "editmode"
+                            }
+                          ],
+                          staticClass: "btn btn-dark",
+                          attrs: { type: "submit" }
+                        },
+                        [_vm._v("Editar Perfil")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: !_vm.editmode,
+                              expression: "!editmode"
+                            }
+                          ],
+                          staticClass: "btn btn-dark",
+                          attrs: { type: "submit" }
+                        },
+                        [_vm._v("Crear Perfil")]
                       )
                     ])
-                  ])
-                ])
+                  ]
+                )
               ])
             ])
-          ])
-        ])
-      ])
-    ])
+          ]
+        )
+      ]
+    )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("h3", { staticClass: "card-title" }, [_vm._v("Mi Perfil")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", [_vm._v("Id")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("name")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("emil")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("imgPerfil")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Editar")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "modal",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

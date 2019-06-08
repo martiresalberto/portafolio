@@ -86,7 +86,7 @@
             <div class="col-md-6">
             @foreach($abouts as $about)
                 <div class="wrap-img">
-                    <img src="">
+                    <img src="/images/miperfil/{{ $about->imgPerfil }}">
                 </div>
                 <ul class="list-inline social-buttons">
                     
@@ -98,9 +98,9 @@
             </div>
             <div class="col-md-6">
                 <div class="row heading">
-                    <h4>Martires Alberto Orozco Gonzalez</h4>
+                    <h4>{{ $about->name }}</h4>
                     <hr class="line02">
-                    <div class="intro">{{ $about->name }}</div>
+                    <div class="intro">Programdor web</div>
                 </div>
                 <div class="row">
                     <p>{{ $about->description }}</p>

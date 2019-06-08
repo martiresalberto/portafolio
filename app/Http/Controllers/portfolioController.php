@@ -36,7 +36,7 @@ public function index()
  //  $abouts = About::all();
 
   $abouts = About::join('users','abouts.user_id','=','users.id')
-  ->select('abouts.id','abouts.name','abouts.description')
+  ->select('abouts.id','abouts.name','abouts.description','users.imgPerfil')
   ->orderBy('abouts.id', 'desc')->paginate(3);
 
 // dd($abouts);
