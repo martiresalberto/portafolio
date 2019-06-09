@@ -25,7 +25,7 @@
             <div class="col-sm-4 services-item">
                 <div class="wrap-img">
 
-                    <img src="/images/servicios/{{ $ser->imgServicio }}">
+                    <img src="{{ $ser->imgServicio }}">
                 </div>
                 <h3 class="services-heading">{{ $ser->name }}</h3>
 
