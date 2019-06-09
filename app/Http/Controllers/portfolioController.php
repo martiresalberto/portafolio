@@ -30,7 +30,7 @@ public function index()
   // $product = Product::all();
 
   $products = Product::join('users','products.user_id','=','users.id')
-  ->select('products.id','products.name','products.description','products.imgProducto','users.name as nombre_usuario')
+  ->select('products.id','products.name','products.description','products.price','products.created_at','products.imgProducto','users.name as nombre_usuario')
   ->orderBy('products.id', 'desc')->paginate(3);
  
  //  $abouts = About::all();

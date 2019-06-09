@@ -3,6 +3,8 @@
 
 
 @include('Portfolio.partials.nav') 
+        
+
 
 @section('services')
 <!-- ////////////Services -->
@@ -32,6 +34,9 @@
             </div>
             @endforeach
         </div>
+
+        
+
     </div>
 
 </section>
@@ -44,6 +49,7 @@
 <section class="box-content box-style" id="portfolio">
    
     <div class="container">
+        
         <div class="row heading">
              <div class="col-lg-12">
                 <h2>Mi Portafolio</h2>
@@ -51,12 +57,12 @@
                 <div class="intro">PAGINAS | PLANTILLAS</div>
             </div>
         </div>
+
         <div class="row">
 
            @foreach($products as $pro)
-
            <div class="col-md-3 col-sm-6 portfolio-item">
-                <a href="" class="portfolio-link" data-toggle="modal">
+                <a href="#" class="portfolio-link" data-toggle="modal" data-target="#exampleModal">
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content">
                             <i class="fa fa-eye fa-3x"></i>
@@ -64,16 +70,54 @@
                     </div>
                     <img src="images/portafolio/{{ $pro->imgProducto }}" class="img-responsive" alt="">
                 </a>
-                
-            </div>
-          
+          </div>
            @endforeach
-            
+
+
         </div>
-    </div>
+
 
 </section>
         
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    @foreach($products as $pro)
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title text-center" id="exampleModalLabel"  style="font-family: 'Indie Flower', cursive;">
+        Mi Portafolio</h1>
+        
+          
+      </div>
+      <div class="modal-body">
+       
+          <div class="col-sm-6" style="margin-top: 120px;">
+           
+             <center><h3 style="">{{ $pro->name }}</h3></center>
+             <br><br><br>
+             <center><p>{{ $pro->description }}</p></center>
+             <br><br>
+             <center><h4>Precio : Q.{{ $pro->price }}</h4></center> 
+              
+              <hr>
+          
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-warning">Ir a la pagina</button>
+                  
+          </div>
+          
+          <img src="images/portafolio/{{ $pro->imgProducto }}" width="358" alt="">
+         
+      </div>
+      <div class="modal-footer">
+        <center><p>creado : {{ $pro->created_at }}</p></center>
+      </div>
+    </div>
+    @endforeach
+  </div>
+</div>
+
 @stop
 
 @section('about')
