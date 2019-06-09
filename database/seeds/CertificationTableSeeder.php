@@ -15,7 +15,6 @@ class CertificationTableSeeder extends Seeder
          $data = array(
 			[
 				'name' 			=> 'E-COMMERCE',
-				'slug' 			=> 'E-COMMERCE',
 				'description' 	=> 'El e-commerce consiste en la distribución, venta, compra, marketing y suministro de información de productos o servicios a través de Internet. Originalmente el término se aplicaba a la realización de transacciones mediante medios electrónicos, como por ejemplo el intercambio electrónico de datos.',
 				'imgCertificacion' 		=> 'default.png',
 				'user_id' => 1

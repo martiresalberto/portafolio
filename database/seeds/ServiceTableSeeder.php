@@ -16,7 +16,6 @@ class ServiceTableSeeder extends Seeder
 		
 	        [
 				'name' 			=> 'HTML5',
-				'slug' 			=> 'HTML5',
 				'description' 	=> 'HTML5 es la última versión de HTML.El término representa dos conceptos diferentes:Se trata de una nueva versión con nuevos elementos, atributos ',
 				'imgServicio' 	=> 'default.png',
 			    'user_id'       => 1	

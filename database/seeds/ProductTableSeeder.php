@@ -15,7 +15,6 @@ class ProductTableSeeder extends Seeder
         $data = array(
 			[
 				'name' 			=> 'Portafolio',
-				'slug' 			=> 'Portafolio',
 				'description' 	=> 'Es un portafolio creado desde una plantilla de Bootstrap, con el framework Laravel 5.4 el lenguaje de programacion PHP.',
 				'price' 		=> 1800.00,
 				'imgProducto' 		=> 'default.jpg',
