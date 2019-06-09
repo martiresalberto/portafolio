@@ -16,13 +16,13 @@ class CertificationTableSeeder extends Seeder
 			[
 				'name' 			=> 'E-COMMERCE',
 				'description' 	=> 'El e-commerce consiste en la distribución, venta, compra, marketing y suministro de información de productos o servicios a través de Internet. Originalmente el término se aplicaba a la realización de transacciones mediante medios electrónicos, como por ejemplo el intercambio electrónico de datos.',
-				'image' 		=> 'http://gdurl.com/Qhjq',
+				'imgCertificacion' 		=> 'http://gdurl.com/Qhjq',
 				'user_id'      =>1,
 			],
 			[
 				'name' 			=> 'ANALITICA WEB',
 				'description' 	=> 'Analítica web es un procedimiento mediante el cual se recaba información relacionada con los usuarios que visitan una página web para realizar un análisis estratégico y optimizar su estadía en el sitio, para lo cual existen varios tipos de herramientas de analítica web, como por ejemplo Google Analytics y Omniture .',
-				'image' 		=> 'http://gdurl.com/M0oK',
+				'imgCertificacion' 		=> 'http://gdurl.com/M0oK',
 				'user_id'      =>1,
 			],
 			[
