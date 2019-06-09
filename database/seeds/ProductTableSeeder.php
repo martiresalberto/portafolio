@@ -20,7 +20,7 @@ class ProductTableSeeder extends Seeder
 				'imgProducto' 		=> 'http://gdurl.com/cAnI',
 				'created_at' 	=> new DateTime,
 				'updated_at' 	=> new DateTime,
-				
+				'user_id'      =>1,
 			],
 			[
 				'name' 			=> 'Tienda-Online',
@@ -29,7 +29,7 @@ class ProductTableSeeder extends Seeder
 				'imgProducto' 		=> 'http://gdurl.com/o-Ca',
 				'created_at' 	=> new DateTime,
 				'updated_at' 	=> new DateTime,
-				
+				'user_id'      =>1,
 			],
 			
 			
