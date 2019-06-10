@@ -23,7 +23,7 @@
                 @foreach($services as $service)  
                     <div class="col-sm-4 services-item">
                         <div class="wrap-img">
-                            <img src="{{ $service->image}}">
+                            <img src="{{ $service->imgServicio}}">
                         </div>
                         <h3 class="services-heading">{{ $service->name }}</h3>
                         <p>{{ $service->description }}</p>
@@ -60,7 +60,7 @@
                                     <i class="fa fa-eye fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="{{ $product->image }}" class="img-responsive" alt="">
+                            <img src="{{ $product->imgProducto }}" class="img-responsive" alt="">
                         </a>
                         
                     </div>
@@ -201,7 +201,7 @@
                     <div class="col-md-4 col-sm-3 portfolio-item2">
                         <a href="{{ Route('detalle-certificacion', $certificado->id )}}" class="portfolio-link" data-toggle="modal">
                             
-                            <img src="{{ $certificado->image}}" class="img-responsive" alt="">
+                            <img src="{{ $certificado->imgCertificacion}}" class="img-responsive" alt="">
                         </a>
                         <div class="portfolio-caption center">
                             <h4>{{ $certificado->name}}</h4>
