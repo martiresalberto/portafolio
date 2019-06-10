@@ -68,7 +68,7 @@
                             <i class="fa fa-eye fa-3x"></i>
                         </div>
                     </div>
-                    <img src="images/portafolio/{{ $pro->imgProducto }}" class="img-responsive" alt="">
+                    <img src="{{ $pro->imgProducto }}" class="img-responsive" alt="">
                 </a>
           </div>
            @endforeach
@@ -107,7 +107,7 @@
                   
           </div>
           
-          <img src="images/portafolio/{{ $pro->imgProducto }}" width="358" alt="">
+          <img src="{{ $pro->imgProducto }}" width="358" alt="">
          
       </div>
       <div class="modal-footer">
@@ -130,7 +130,7 @@
             <div class="col-md-6">
             @foreach($abouts as $about)
                 <div class="wrap-img">
-                    <img src="/images/miperfil/{{ $about->imgPerfil }}">
+                    <img src="{{ $about->imgPerfil }}">
                 </div>
                 <ul class="list-inline social-buttons">
                     

@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name', 255);
             $table->text('description');
             $table->double('price', 15, 8);
-            $table->string('imgProducto')->default('default.png');
+            $table->string('imgProducto')->default('/8RZz');
 
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
