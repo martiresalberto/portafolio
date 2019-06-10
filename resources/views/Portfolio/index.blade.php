@@ -195,7 +195,7 @@
                         <div class="intro">Estas son certificaciones que he adquirido a lo largo del aprendizaje Web</div>
                     </div>
                 </div>
-                @foreach($Certification as $certificado)
+                @foreach($certification as $certificado)
                 <div class="row">
                    
                     <div class="col-md-4 col-sm-3 portfolio-item2">
