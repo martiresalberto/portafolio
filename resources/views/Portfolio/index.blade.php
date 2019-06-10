@@ -81,7 +81,7 @@
                     <div class="col-md-6">
                     @foreach($abouts as $about)
                         <div class="wrap-img">
-                            <img src="{{ $about->image }}">
+                            <img src="{{ $about->imgPerfil }}">
                         </div>
                         <ul class="list-inline social-buttons">
                             
