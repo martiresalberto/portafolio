@@ -181,7 +181,7 @@
             <div class="col-md-4 col-sm-3 portfolio-item2">
                 <a href="" class="portfolio-link" data-toggle="modal">
                     
-                    <img src="images/certificados/{{ $cert->imgCertificacion}}" class="img-responsive" alt="">
+                    <img src="{{ $cert->imgCertificacion}}" class="img-responsive" alt="">
                 </a>
                 <div class="portfolio-caption center">
                     <h4>{{ $cert->name }}</h4>
