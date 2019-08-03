@@ -23,7 +23,7 @@
                 @foreach($services as $service)  
                     <div class="col-sm-4 services-item">
                         <div class="wrap-img">
-                            <img src="{{ $service->imgServicio}}">
+                            <img src="images/servicios/{{ $service->imgServicio }}">
                         </div>
                         <h3 class="services-heading">{{ $service->name }}</h3>
                         <p>{{ $service->description }}</p>
@@ -54,23 +54,83 @@
                     @foreach($products as $product)
 
                    <div class="col-md-3 col-sm-6 portfolio-item">
-                        <a href="{{ Route('detalle-portafolio', $product->id )}}" class="portfolio-link" data-toggle="modal">
+                        <a href="#" class="portfolio-link" data-toggle="modal" data-target="#exampleModal">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
                                     <i class="fa fa-eye fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="{{ $product->imgProducto }}" class="img-responsive" alt="">
+                            <img src="images/portafolio/{{ $product->imgProducto }}" class="img-responsive" alt="">
                         </a>
                         
+                        
                     </div>
-                    @endforeach()
-                    
+                                        
                 </div>
             </div>
         </section>
+
+        <!-- Modal de portafolio -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Portafolio</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!--Main layout-->
+                  
+
+                        <!--Grid row-->
+                        <div class="row">
+
+                          <!--Grid column-->
+                          <div class="col-md-5">
+
+                            <img src="images/portafolio/{{ $product->imgProducto }}"  class="img-fluid" alt="">
+
+                          </div>
+                          <!--Grid column-->
+                          <div class="col-md-7">
+
+
+                          <p class="lead">
+                            <span>$700</span>
+                          </p>
+                            
+                           <p class="lead font-weight-bold">{{ $product->name }}</p>
+
+                           
+                           <p class="font-weight-bold">Description</p>
+
+                          <p>{{ $product->description }}</p>
+
+                          </div>  
+
+
+                        </div>
+                        <!--Grid row-->
+
+
+                    <!--Main layout-->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Regresar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!-- termina modal de portafolio -->
+                
+                @endforeach()
+
         
 @stop
+
+
 
 @section('about')
 
@@ -81,15 +141,9 @@
                     <div class="col-md-6">
                     @foreach($abouts as $about)
                         <div class="wrap-img">
-                            <img src="{{ $about->imgPerfil }}">
+                            <img src="images/miperfil/{{ $about->user->imgPerfil }}">
                         </div>
-                        <ul class="list-inline social-buttons">
-                            
-                            <li><a href="https://www.facebook.com/alberto.orozco.56679"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="https://github.com/martiresalberto"><i class="fa fa-github"></i></a>
-                            </li>
-                        </ul>
+                
                     </div>
                     <div class="col-md-6">
                         <div class="row heading">
@@ -109,110 +163,37 @@
 @stop
 
 
-{{-- @section('pricing')
-<!-- ////////////Pricing -->
-        <section class="box-content" id="pricing">
-            <div class="container">
-                <div class="row heading">
-                     <div class="col-lg-12">    
-                        <h2>PERFECT PRICING</h2>
-                        <hr class="line02">
-                        <div class="intro">Lorem ipsum dolor sit amet</div>
-                    </div>
-                </div>
-                <div class="row pricing-item">
-                    <div class="table-responsive">
-                        <div class="container">
-                            <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>&nbsp </th>
-                                    <th>Name</th>
-                                    <th>Type</th>
-                                    <th>Engine</th>
-                                    <th>Displacement</th>
-                                    <th>Color</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Yamaha FZ-07</td>
-                                    <td>Sport Bike</td>
-                                    <td>249cc Single-cylinder</td>
-                                    <td>600cc</td>
-                                    <td>Green,Balck</td>
-                                    <td>20,000</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Superleggera</td>
-                                    <td>Standard</td>
-                                    <td>250cc Single-cylinder</td>
-                                    <td>250cc</td>
-                                    <td>Green,Balck</td>
-                                    <td>20,000</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Super Duke R</td>
-                                    <td>Dual Sport</td>
-                                    <td>449cc Single-cylinder</td>
-                                    <td>500cc</td>
-                                    <td>Yellow,Balck</td>
-                                    <td>30,000</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>BMW S 1000 R</td>
-                                    <td>Sport Bike</td>
-                                    <td>249cc Single-cylinder</td>
-                                    <td>250cc</td>
-                                    <td>Red,Balck</td>
-                                    <td>50,000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>  
-        
-@stop --}}
-
 @section('certification')
 
 <!-- ////////////Portfolio -->
 
-        <section class="box-content box-style" id="portfolio2">
-            <div class="container" style="margin-top: 40px;">
-                <div class="row heading">
-                     <div class="col-lg-12">
-                        <h2>Mis Certificaciones</h2>
-                        <hr class="line01">
-                        <div class="intro">Estas son certificaciones que he adquirido a lo largo del aprendizaje Web</div>
-                    </div>
-                </div>
-                @foreach($certification as $certificado)
-                <div class="row">
-                   
-                    <div class="col-md-4 col-sm-3 portfolio-item2">
-                        <a href="{{ Route('detalle-certificacion', $certificado->id )}}" class="portfolio-link" data-toggle="modal">
-                            
-                            <img src="{{ $certificado->imgCertificacion}}" class="img-responsive" alt="">
-                        </a>
-                        <div class="portfolio-caption center">
-                            <h4>{{ $certificado->name}}</h4>
-                            
-                        </div>
-                    </div>
-                   @endforeach() 
+<section class="box-content box-style" id="portfolio2">
+    <div class="container" style="margin-top: 40px;">
+        <div class="row heading">
+             <div class="col-lg-12">
+                <h2>Mis Certificaciones</h2>
+                <hr class="line01">
+                <div class="intro">Estas son certificaciones que he adquirido a lo largo del aprendizaje Web</div>
+            </div>
+        </div>
+        @foreach($certification as $certificado)
+        <div class="row">
+           
+            <div class="col-md-4 col-sm-3 portfolio-item2">
+                <a href="#" class="portfolio-link" data-toggle="modal">
+                    
+                    <img src="images/certificados/{{ $certificado->imgCertificacion}}" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption center">
+                    <h4>{{ $certificado->name}}</h4>
                     
                 </div>
             </div>
-        </section>
+           @endforeach() 
+            
+        </div>
+    </div>
+</section>
         
 @stop
 

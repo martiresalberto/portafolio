@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\User;
 
 class Product extends Model
 {
@@ -14,6 +13,6 @@ class Product extends Model
   // Relation with Category
     public function user()
     {
-        return $this->hasMany('App\User');
+        return $this->belongTo('App\User');
     }
 }

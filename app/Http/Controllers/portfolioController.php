@@ -12,61 +12,43 @@ use App\Certification;
 
 
 class portfolioController extends Controller
+
 {
-public function index()
 
-{	
+  public function index()
+
+   {	
   
-  $services = Service::join('users','services.user_id','=','users.id')
-  ->select('services.id','services.name','services.description','services.imgServicio','users.name as nombre_usuario')
-  ->orderBy('services.id', 'desc')->paginate(3);
-  
- //  $certification = Certification::all();
-  
-  $certification = Certification::join('users','certifications.user_id','=','users.id')
-  ->select('certifications.id','certifications.name','certifications.description','certifications.imgCertificacion','users.name as nombre_usuario')
-  ->orderBy('certifications.id', 'desc')->paginate(3);
+      $services = Service::all();  
 
-  // $product = Product::all();
+      // $services = Service::join('users','services.user_id','=','users.id')
+      // ->select('services.id','services.name','services.description','services.imgServicio','users.name as nombre_usuario')
+      // ->orderBy('services.id', 'desc')->paginate(3);
+      
+      $certification = Certification::all();
+      
+      // $certification = Certification::join('users','certifications.user_id','=','users.id')
+      // ->select('certifications.id','certifications.name','certifications.description','certifications.imgCertificacion','users.name as nombre_usuario')
+      // ->orderBy('certifications.id', 'desc');
 
-  $products = Product::join('users','products.user_id','=','users.id')
-  ->select('products.id','products.name','products.description','products.price','products.created_at','products.imgProducto','users.name as nombre_usuario')
-  ->orderBy('products.id', 'desc')->paginate(3);
- 
- //  $abouts = About::all();
+      $products = Product::all();
 
-  $abouts = About::join('users','abouts.user_id','=','users.id')
-  ->select('abouts.id','abouts.name','abouts.description','users.imgPerfil')
-  ->orderBy('abouts.id', 'desc')->paginate(3);
+      // $products = Product::join('users','products.user_id','=','users.id')
+      // ->select('products.id','products.name','products.description','products.price','products.created_at','products.imgProducto','users.name as nombre_usuario')
+      // ->orderBy('products.id', 'desc');
+     
+      $abouts = About::with('user')->get();
 
-// dd($abouts);
+      // $abouts = About::join('users','abouts.user_id','=','users.id')
+      // ->select('abouts.id','abouts.name','abouts.description','users.imgPerfil')
+      // ->orderBy('abouts.id', 'desc')->paginate(3);
 
-return view('Portfolio.index',compact('services','products','abouts','certification'));
+       // dd($abouts);
 
-}
+    return view('Portfolio.index',compact('services','products','abouts','certification'));
+
+   }
     
-public function show($slug)
 
-{
-          
-          
-       $product = Product::where('slug', $slug)->first();
-       //dd($product);
-
-       return view('Portfolio.show', compact('product'));
-}
-
-
-public function showCertificate($slug)
-
-{
-          
-       $Certification = Certification::where('slug', $slug)->first();
-       //dd($product);
-
-       return view('certificado.show', compact('Certification'));
-}
-
-    
     
 }

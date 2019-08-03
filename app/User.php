@@ -3,9 +3,6 @@
 namespace App;
 
 use App\About;
-use App\Certification;
-use App\Product;
-use App\Service;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -32,27 +29,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function product()
-    {
-         return $this->hasMany('App/Product');
-    }
+   
 
-
-    public function abouts()
+    public function about()
     {
          return $this->hasMany('App/About');
     }
 
   
-    public function habilidades()
-    {
-         return $this->hasMany('App/Service');
-    }
-
-
-    public function certificaciones()
-    {
-        return $this->hasMany('App/Certification');
-    }
 
 }
