@@ -108,6 +108,8 @@
 
                   <p>{{ $product->description }}</p>
 
+
+
                   </div>  
 
 
@@ -229,6 +231,7 @@
 
               <p>{{ $certificado->description }}</p>
 
+
               </div>  
 
 
@@ -239,6 +242,7 @@
         <!--Main layout-->
       </div>
       <div class="modal-footer">
+        <a class="btn btn-primary" href="www.alberto-orozco.website">Ir a Pagina web</a>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Regresar</button>
       </div>
     </div>
