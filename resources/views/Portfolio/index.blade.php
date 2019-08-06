@@ -6,37 +6,36 @@
 
 @include('Portfolio.partials.nav') 
 
-@section('services')
-<!-- ////////////Services -->
-        <section class="box-content " id="services">
-            <div class="container" style="margin-top: 20px;">
-                <div class="row heading">
-                     <div class="col-lg-12">
-                        <h2>Mis Habilidades</h2>
-                        <hr class="line02">
-                        <div class="intro">FRONT-END | BACK-END</div>
-                    </div>
-                </div>
+@section('about')
 
-            
-                <div class="row">
-                @foreach($services as $service)  
-                    <div class="col-sm-4 services-item">
-                        <div class="wrap-img">
-                            <img src="images/servicios/{{ $service->imgServicio }}">
-                        </div>
-                        <h3 class="services-heading">{{ $service->name }}</h3>
-                        <p>{{ $service->description }}</p>
-                        
-                    </div>
-                @endforeach()
+<!-- ////////////About -->
+<section class="box-content" id="about">
+    <div class="container mt-5">
+        <div class="row center">
+            <div class="col-md-6">
+            @foreach($abouts as $about)
+                <div class="wrap-img">
+                    <img src="images/miperfil/{{ $about->user->imgPerfil }}">
                 </div>
-             
-            </div>
-        </section>
         
-       
+            </div>
+            <div class="col-md-6">
+                <div class="row heading">
+                    <h2>Acerca de Mi</h2>
+                    <hr class="line02">
+                    <div class="intro">{{ $about->name }}</div>
+                </div>
+                <div class="row">
+                    <p>{{ $about->description }}</p>
+                </div>
+            @endforeach()
+            </div>
+        </div>
+    </div>
+</section>
+        
 @stop
+
 
 @section('Portafolio')
 <!-- ////////////Portfolio -->
@@ -132,37 +131,39 @@
         
 @stop
 
-
-
-@section('about')
-
-<!-- ////////////About -->
-        <section class="box-content" id="about">
-            <div class="container">
-                <div class="row center">
-                    <div class="col-md-6">
-                    @foreach($abouts as $about)
-                        <div class="wrap-img">
-                            <img src="images/miperfil/{{ $about->user->imgPerfil }}">
-                        </div>
-                
-                    </div>
-                    <div class="col-md-6">
-                        <div class="row heading">
-                            <h2>Acerca de Mi</h2>
-                            <hr class="line02">
-                            <div class="intro">{{ $about->name }}</div>
-                        </div>
-                        <div class="row">
-                            <p>{{ $about->description }}</p>
-                        </div>
-                    @endforeach()
-                    </div>
-                </div>
+@section('services')
+<!-- ////////////Services -->
+<section class="box-content " id="services">
+    <div class="container" style="margin-top: 20px;">
+        <div class="row heading">
+             <div class="col-lg-12">
+                <h2>Mis Habilidades</h2>
+                <hr class="line02">
+                <div class="intro">FRONT-END | BACK-END</div>
             </div>
-        </section>
+        </div>
+
+    
+        <div class="row">
+        @foreach($services as $service)  
+            <div class="col-sm-4 services-item">
+                <div class="wrap-img">
+                    <img src="images/servicios/{{ $service->imgServicio }}">
+                </div>
+                <h3 class="services-heading">{{ $service->name }}</h3>
+                <p>{{ $service->description }}</p>
+                
+            </div>
+        @endforeach()
+        </div>
+     
+    </div>
+</section>
         
+       
 @stop
+
+
 
 
 @section('certification')
@@ -242,7 +243,6 @@
         <!--Main layout-->
       </div>
       <div class="modal-footer">
-        <a class="btn btn-primary" href="www.alberto-orozco.website">Ir a Pagina web</a>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Regresar</button>
       </div>
     </div>
@@ -253,7 +253,6 @@
         @endforeach() 
         
 @stop
-
 
 
 @section('contact')

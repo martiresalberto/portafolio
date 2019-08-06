@@ -11,7 +11,7 @@
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
     
         <div class="info">
-          <a href="#" class="d-block" style="color:white;">{{ Auth::user()->name }}</a>
+          <a class="d-block" style="color:white; list-style: none;">{{ Auth::user()->name }}</a>
         </div>
       </div>
 
