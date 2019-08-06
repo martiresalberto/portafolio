@@ -286,8 +286,8 @@
                 <br>
                 <br>
                 <p>Guatemala , Guatemala.</p>
-                <p>(+502)56227500</p>
-                <p>martires@gmail.com</p>
+                <p>(+502)43745326</p>
+                <p>martiresalbertoorozcogonzalez@gmail.com</p>
             
             </div>
         </div>
