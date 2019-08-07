@@ -147,12 +147,6 @@
             </div>
              <ul class="list-inline social-buttons">
                 <li>
-                  Fb
-                  <a href="https://www.facebook.com/alberto.orozco.56679">
-                    <i class="fab fa-facebook fa-2x"></i>
-                  </a>
-                </li>
-                <li>
                   GitHub
                   <a href="https://github.com/martiresalberto">
                     <i class="fab fa-github fa-2x"></i>
