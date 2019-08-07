@@ -9,6 +9,7 @@
 
    <title>Portafolio | Alberto Orozco</title>
   
+    <script src="{{ asset('https://kit.fontawesome.com/49667e10d3.js') }}"></script>
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
    
