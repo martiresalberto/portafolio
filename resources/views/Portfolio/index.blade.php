@@ -6,47 +6,36 @@
 
 @include('Portfolio.partials.nav') 
 
-@section('about')
 
-<!-- ////////////About -->
-<section class="box-content" id="about">
-<div class="container mt-5">
-    <div class="row center">
-        <div class="col-md-6">
-        @foreach($abouts as $about)
-            <div class="wrap-img">
-                <img src="images/miperfil/{{ $about->user->imgPerfil }}">
-            </div>
-             <ul class="list-inline social-buttons">
-                <li>
-                  Fb
-                  <a href="https://www.facebook.com/alberto.orozco.56679">
-                    <i class="fab fa-facebook fa-2x"></i>
-                  </a>
-                </li>
-                <li>
-                  GitHub
-                  <a href="https://github.com/martiresalberto">
-                    <i class="fab fa-github fa-2x"></i>
-                  </a>
-                </li>
-            </ul>
-        </div>
-        <div class="col-md-6">
-            <div class="row heading">
-                <h2>Acerca de Mi</h2>
+@section('services')
+<!-- ////////////Services -->
+<section class="box-content " id="services">
+    <div class="container" style="margin-top: 20px;">
+        <div class="row heading">
+             <div class="col-lg-12">
+                <h2>Mis Habilidades</h2>
                 <hr class="line02">
-                <div class="intro">{{ $about->name }}</div>
+                <div class="intro">FRONT-END | BACK-END</div>
             </div>
-            <div class="row">
-                <p>{{ $about->description }}</p>
+        </div>
+
+    
+        <div class="row">
+        @foreach($services as $service)  
+            <div class="col-sm-4 services-item">
+                <div class="wrap-img">
+                    <img src="images/servicios/{{ $service->imgServicio }}">
+                </div>
+                <h3 class="services-heading">{{ $service->name }}</h3>
+                <p>{{ $service->description }}</p>
+                
             </div>
         @endforeach()
         </div>
+     
     </div>
-</div>
 </section>
-        
+       
 @stop
 
 
@@ -142,36 +131,53 @@
 @stop
 
 
-@section('services')
-<!-- ////////////Services -->
-<section class="box-content " id="services">
-    <div class="container" style="margin-top: 20px;">
-        <div class="row heading">
-             <div class="col-lg-12">
-                <h2>Mis Habilidades</h2>
-                <hr class="line02">
-                <div class="intro">FRONT-END | BACK-END</div>
-            </div>
-        </div>
 
-    
-        <div class="row">
-        @foreach($services as $service)  
-            <div class="col-sm-4 services-item">
-                <div class="wrap-img">
-                    <img src="images/servicios/{{ $service->imgServicio }}">
-                </div>
-                <h3 class="services-heading">{{ $service->name }}</h3>
-                <p>{{ $service->description }}</p>
-                
+
+
+@section('about')
+
+<!-- ////////////About -->
+<section class="box-content" id="about">
+<div class="container mt-5">
+    <div class="row center">
+        <div class="col-md-6">
+        @foreach($abouts as $about)
+            <div class="wrap-img">
+                <img src="images/miperfil/{{ $about->user->imgPerfil }}">
+            </div>
+             <ul class="list-inline social-buttons">
+                <li>
+                  Fb
+                  <a href="https://www.facebook.com/alberto.orozco.56679">
+                    <i class="fab fa-facebook fa-2x"></i>
+                  </a>
+                </li>
+                <li>
+                  GitHub
+                  <a href="https://github.com/martiresalberto">
+                    <i class="fab fa-github fa-2x"></i>
+                  </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <div class="row heading">
+                <h2>Acerca de Mi</h2>
+                <hr class="line02">
+                <div class="intro">{{ $about->name }}</div>
+            </div>
+            <div class="row">
+                <p>{{ $about->description }}</p>
             </div>
         @endforeach()
         </div>
-     
     </div>
+</div>
 </section>
-       
+        
 @stop
+
+
 
 
 @section('certification')
@@ -208,14 +214,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Cartficados</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Certficado {{ $certificado->name }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <!--Main layout-->
-      
 
             <!--Grid row-->
             <div class="row">
@@ -229,21 +234,14 @@
               <!--Grid column-->
               <div class="col-md-7">
 
-
-               <p class="lead font-weight-bold">{{ $certificado->name }}</p>
-
-               
-               <p class="font-weight-bold">Description</p>
+              <p class="lead font-weight-bold">{{ $certificado->name }}</p>
 
               <p>{{ $certificado->description }}</p>
 
-
               </div>  
-
 
             </div>
             <!--Grid row-->
-
 
         <!--Main layout-->
       </div>

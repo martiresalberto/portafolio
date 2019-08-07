@@ -90,8 +90,9 @@ class HabilidadesController extends Controller
             $name = time().'.' .explode('/', explode(':', substr($request->imgServicio, 0, strpos
             ($request->imgServicio, ';')))[1])[1];    
 
-            \Image::make($request->imgServicio)->save(public_path('images/servicio/').$name);      
+            \Image::make($request->imgServicio)->save(public_path('images/servicios/').$name);      
             $request->merge(['imgServicio' => $name]);
+            
             
 
        }
@@ -109,7 +110,7 @@ class HabilidadesController extends Controller
      */
     public function destroy($id)
     {
-        $habilidad = Servicio::findOrFail($id);
+        $habilidad = Service::findOrFail($id);
 
         // delete the user
         $habilidad->delete();
