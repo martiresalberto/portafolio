@@ -7,7 +7,7 @@
     <meta name="description" content="Free Bootstrap Themes Designed by 365bootstrap.com" />
     <meta name="author" content="http://www.365bootstrap.com" />
 
-   <title>Portafolio|Martires Alberto</title>
+   <title>Portafolio | Alberto Orozco</title>
   
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">

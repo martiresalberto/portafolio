@@ -176,7 +176,7 @@
              <div class="col-lg-12">
                 <h2>Mis Certificaciones</h2>
                 <hr class="line01">
-                <div class="intro">Estas son certificaciones que he adquirido a lo largo del aprendizaje Web</div>
+                {{-- <div class="intro">Estas son certificaciones que he adquirido a lo largo del aprendizaje Web</div> --}}
             </div>
         </div>
         @foreach($certification as $certificado)
