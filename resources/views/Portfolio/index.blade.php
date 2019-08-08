@@ -23,7 +23,7 @@
         <div class="row">
         @foreach($services as $service)  
             <div class="col-sm-4 services-item">
-                <div class="wrap-img">
+                <div>
                     <img src="images/servicios/{{ $service->imgServicio }}">
                 </div>
                 <h3 class="services-heading">{{ $service->name }}</h3>
