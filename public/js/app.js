@@ -75980,7 +75980,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.form.reset();
       $('#addNew').modal('show');
     },
-    deleteHabilidad: function deleteHabilidad(id) {
+    deleteCertificado: function deleteCertificado(id) {
       var _this3 = this;
 
       Swal.fire({

@@ -10,7 +10,7 @@
 @section('services')
 <!-- ////////////Services -->
 <section class="box-content " id="services">
-    <div class="container" style="margin-top: 20px;">
+    <div class="container-fluid" style="margin-top: 20px;">
         <div class="row heading">
              <div class="col-lg-12">
                 <h2>Mis Habilidades</h2>
@@ -39,95 +39,44 @@
 @stop
 
 
-@section('Portafolio')
+@section('portafolio')
 <!-- ////////////Portfolio -->
 <section class="box-content box-style" id="portfolio">
-    <div class="container">
-        <div class="row heading">
-             <div class="col-lg-12">
-                <h2>Mi Portafolio</h2>
-                <hr class="line01">
-                <div class="intro">PAGINAS | PLANTILLAS</div>
-            </div>
+
+<div class="container">
+    
+    <div class="row heading">
+         <div class="col-lg-12">
+            <h2>Mi Portafolio</h2>
+            <hr class="line01">
+            <div class="intro">PAGINAS | PLANTILLAS</div>
         </div>
-        <div class="row">
-
-            @foreach($products as $product)
-
-           <div class="col-md-3 col-sm-6 portfolio-item">
-                <a href="#" class="portfolio-link" data-toggle="modal" data-target="#exampleModal">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content">
-                            <i class="fa fa-eye fa-3x"></i>
-                        </div>
+    </div>
+    @foreach($products as $product)
+       
+    <div class="row">
+       <div class="col-md-3 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" data-target="#product{{ $product->id }}">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                        <i class="fa fa-eye fa-3x"></i>
                     </div>
-                    <img src="images/portafolio/{{ $product->imgProducto }}" class="img-responsive" alt="">
-                </a>
-                
-                
-            </div>
-                                
+                </div>
+                <img src="images/portafolio/{{ $product->imgProducto }}" class="img-responsive" alt="">
+            </a>
+            
         </div>
+   
+    
+    @endforeach()
+   
     </div>
-</section>
-<!-- Modal de portafolio -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Portafolio</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <!--Main layout-->
-      
 
-            <!--Grid row-->
-            <div class="row">
-
-              <!--Grid column-->
-              <div class="col-md-5">
-
-                <img src="images/portafolio/{{ $product->imgProducto }}"  class="img-fluid" alt="">
-
-              </div>
-              <!--Grid column-->
-              <div class="col-md-7">
-
-
-              <p class="lead">
-                <span>$700</span>
-              </p>
-                
-               <p class="lead font-weight-bold">{{ $product->name }}</p>
-
-               
-               <p class="font-weight-bold">Description</p>
-
-              <p>{{ $product->description }}</p>
-
-
-
-              </div>  
-
-
-            </div>
-            <!--Grid row-->
-
-
-        <!--Main layout-->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Regresar</button>
-      </div>
-    </div>
-  </div>
 </div>
-<!-- termina modal de portafolio -->
-@endforeach()
+
+</section>
         
+    @include('Portfolio.partials.modal')
 @stop
 
 
@@ -146,6 +95,7 @@
                 <img src="images/miperfil/{{ $about->user->imgPerfil }}">
             </div>
              <ul class="list-inline social-buttons">
+    
                 <li>
                   GitHub
                   <a href="https://github.com/martiresalberto">
@@ -177,50 +127,50 @@
 @section('certification')
 <!-- ////////////Portfolio -->
 <section class="box-content box-style" id="portfolio2">
-    <div class="container" style="margin-top: 40px;">
-        <div class="row heading">
-             <div class="col-lg-12">
-                <h2>Mis Certificaciones</h2>
-                <hr class="line01">
-                <div class="intro">Las mejores cosas en la vida no son cosas</div>
-            </div>
-        </div>
-        @foreach($certification as $certificado)
-        <div class="row">
-           
-            <div class="col-md-4 col-sm-3 portfolio-item2">
-                <a href="#" class="portfolio-link" data-toggle="modal" data-target="#certificado">
-                    
-                    <img src="images/certificados/{{ $certificado->imgCertificacion}}" class="img-responsive" alt="">
-                </a>
-                <div class="portfolio-caption center">
-                    <h4>{{ $certificado->name}}</h4>
-                    
-                </div>
-            </div>
-          
-            
+<div class="container" style="margin-top: 40px;">
+    <div class="row heading">
+         <div class="col-lg-12">
+            <h2>Mis Certificaciones</h2>
+            <hr class="line01">
+            <div class="intro">Las mejores cosas en la vida no son cosas</div>
         </div>
     </div>
-</section>
-<!-- Modal de Certficados -->
-<div class="modal fade" id="certificado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+@foreach($certification as $certificado)
+        
+<div class="row">
+           
+<div class="col-md-4 col-sm-3 portfolio-item2">
+    
+    <a class="portfolio-link">
+        
+        <img src="images/certificados/{{ $certificado->imgCertificacion}}" class="img-responsive" alt="">
+    </a>
+    <div class="portfolio-caption center">
+  
+        <h4>{{ $certificado->name}}</h4>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#certificado{{ $certificado->id }}">Ver certficado</button>
+    </div>
+</div>
+
+ <!-- Modal de Certficados -->
+<div class="modal fade" id="certificado{{ $certificado->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Certficado {{ $certificado->name }}</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Certficado</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+        <div class="modal-body">
         <!--Main layout-->
 
             <!--Grid row-->
             <div class="row">
-
+              
               <!--Grid column-->
               <div class="col-md-5">
+                
 
                 <img src="images/certificados/{{ $certificado->imgCertificacion}}" class="img-fluid" alt="">
 
@@ -242,11 +192,20 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Regresar</button>
       </div>
+
     </div>
   </div>
 </div>
 <!-- termina modal de Certficados -->
-@endforeach() 
+          
+ @endforeach()   
+
+ </div>
+        
+</div>
+</section>
+
+
         
 @stop
 
