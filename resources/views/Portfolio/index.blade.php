@@ -9,31 +9,46 @@
 
 @section('services')
 <!-- ////////////Services -->
-<section class="box-content " id="services">
-    <div class="container-fluid" style="margin-top: 20px;">
-        <div class="row heading">
-             <div class="col-lg-12">
-                <h2>Mis Habilidades</h2>
-                <hr class="line02">
-                <div class="intro">FRONT-END | BACK-END</div>
-            </div>
-        </div>
-
+<section class="box-content" id="services">
+   
+<div class="container" style="margin-top: 20px;">
     
-        <div class="row">
-        @foreach($services as $service)  
-            <div class="col-sm-4 services-item">
-                <div>
-                    <img src="images/servicios/{{ $service->imgServicio }}">
-                </div>
-                <h3 class="services-heading">{{ $service->name }}</h3>
-                <p>{{ $service->description }}</p>
-                
-            </div>
-        @endforeach()
-        </div>
-     
+  <div class="row heading">
+
+       <div class="col-lg-12">
+          <h2>Mis Habilidades</h2>
+          <hr class="line02">
+          <div class="intro">FRONT-END | BACK-END</div>
+      </div>
+  
+  </div>
+
+
+@foreach($services as $service) 
+
+<div class="row">
+
+  <div class="col-sm-4 services-item">
+    
+    <div class="wrap-img">
+     <img src="images/servicios/{{ $service->imgServicio }}">
     </div>
+    
+    <h3>{{ $service->name }}</h3>
+    
+    <p>{{ $service->description }}</p>
+    
+
+  </div>
+
+
+@endforeach()
+       
+</div>
+
+ 
+</div>
+
 </section>
        
 @stop

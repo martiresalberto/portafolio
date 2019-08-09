@@ -11,7 +11,7 @@
   
     <script src="{{ asset('https://kit.fontawesome.com/49667e10d3.js') }}"></script>
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css') }}">
    
     <!-- Custom CSS -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
