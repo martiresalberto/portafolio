@@ -67,10 +67,12 @@
             <div class="intro">PAGINAS | PLANTILLAS</div>
         </div>
     </div>
+
     @foreach($products as $product)
-       
+    
     <div class="row">
-       <div class="col-md-3 col-sm-6 portfolio-item">
+       
+       <div class="col-md-3 portfolio-item">
             <a class="portfolio-link" data-toggle="modal" data-target="#product{{ $product->id }}">
                 <div class="portfolio-hover">
                     <div class="portfolio-hover-content">
@@ -82,9 +84,8 @@
             
         </div>
    
-    
     @endforeach()
-   
+    
     </div>
 
 </div>
@@ -92,6 +93,7 @@
 </section>
         
     @include('Portfolio.partials.modal')
+
 @stop
 
 
@@ -150,84 +152,40 @@
             <div class="intro">Las mejores cosas en la vida no son cosas</div>
         </div>
     </div>
-@foreach($certification as $certificado)
+@foreach($certification as $cert)
         
 <div class="row">
            
-<div class="col-md-4 col-sm-3 portfolio-item2">
+<div class="col-md-4 portfolio-item2">
     
     <a class="portfolio-link">
         
-        <img src="images/certificados/{{ $certificado->imgCertificacion}}" class="img-responsive" alt="">
+        <img src="images/certificados/{{ $cert->imgCertificacion}}" class="img-responsive" alt="">
     </a>
+    <br>
     <div class="portfolio-caption center">
-  
-        <h4>{{ $certificado->name}}</h4>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#certificado{{ $certificado->id }}">Ver certficado</button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#certificado{{ $cert->id }}">Ver certficado</button>
     </div>
 </div>
 
- <!-- Modal de Certficados -->
-<div class="modal fade" id="certificado{{ $certificado->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Certficado</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-        <div class="modal-body">
-        <!--Main layout-->
-
-            <!--Grid row-->
-            <div class="row">
-              
-              <!--Grid column-->
-              <div class="col-md-5">
-                
-
-                <img src="images/certificados/{{ $certificado->imgCertificacion}}" class="img-fluid" alt="">
-
-              </div>
-              <!--Grid column-->
-              <div class="col-md-7">
-
-              <p class="lead font-weight-bold">{{ $certificado->name }}</p>
-
-              <p>{{ $certificado->description }}</p>
-
-              </div>  
-
-            </div>
-            <!--Grid row-->
-
-        <!--Main layout-->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Regresar</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-<!-- termina modal de Certficados -->
           
  @endforeach()   
 
  </div>
-        
+
 </div>
+ 
+
+@include('Portfolio.partials.modalCerti')
+
 </section>
-
-
         
 @stop
 
 
 @section('contact')
 <!-- ////////////Contact -->
-<section class="box-content box-style" id="contact">
+<section class="box-content" id="contact">
 <div class="container">
     <div class="row">
 <br>
