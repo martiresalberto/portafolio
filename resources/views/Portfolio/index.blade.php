@@ -104,7 +104,7 @@
 
 <!-- ////////////About -->
 <section class="box-content" id="about">
-<div class="container mt-5">
+<div class="container">
     <div class="row center">
         <div class="col-md-6">
         @foreach($abouts as $about)
