@@ -34,10 +34,6 @@
      <img src="images/servicios/{{ $service->imgServicio }}">
     </div>
     
-    <h3>{{ $service->name }}</h3>
-    
-    <p>{{ $service->description }}</p>
-    
 
   </div>
 
