@@ -30,7 +30,6 @@ class MiPortafolioController extends Controller
              'name' => 'required|string|max:191',
              'description' => 'required',
              'user_id' => 'required',
-             'url' => 'required',
              'price' => 'required',
              'imgProducto' => 'required'
             
@@ -81,7 +80,6 @@ class MiPortafolioController extends Controller
              'name' => 'required|string|max:191',
              'description' => 'required',
              'user_id' => 'required',
-             'url' => 'required',
              'price' => 'required',
              'imgProducto' => 'required'
             

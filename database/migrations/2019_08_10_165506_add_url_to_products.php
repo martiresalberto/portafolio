@@ -15,7 +15,7 @@ class AddUrlToProducts extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             
-            $table->string('url', 200)->nullable()->after('price');
+            $table->string('url', 200)->after('price');
         
         });
     }
