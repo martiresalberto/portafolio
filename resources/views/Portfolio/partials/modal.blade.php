@@ -28,7 +28,7 @@
 
 
               <p class="lead">
-                <span>$700</span>
+                <span>Q{{ $product->price }}</span>
               </p>
                 
                <p class="lead font-weight-bold">{{ $product->name }}</p>
