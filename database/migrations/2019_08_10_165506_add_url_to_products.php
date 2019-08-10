@@ -29,7 +29,7 @@ class AddUrlToProducts extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             
-             $table->dropColum('url');
+             $table->dropColumn('url');
 
         });
     }
