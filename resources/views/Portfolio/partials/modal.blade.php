@@ -38,7 +38,7 @@
 
               <p>{{ $product->description }}</p>
 
-
+              <a href="{{ $product->url }}"><p class="lead font-weight-bold info">IR A PAGINA: {{ $product->url }}</p></a>
 
               </div>  
 

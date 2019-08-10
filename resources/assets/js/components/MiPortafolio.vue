@@ -21,6 +21,7 @@
             <th>name</th>
             <th>description</th>
             <th>imgProducto</th>
+            <th>Url</th>
             <th>price</th>
             <th>user_id</th>
             <th>Editar</th>
@@ -31,6 +32,7 @@
             <td>{{ port.name }}</td>
             <td>{{ port.description }}</td>
             <td>{{ port.imgProducto }}</td>
+            <td>{{ port.url }}</td>
             <td>{{ port.price }}</td>
             <td>{{ port.user_id }}</td>
           <td>
@@ -105,6 +107,18 @@
 
       <div class="form-group">
          <input 
+            v-model="form.url"
+            class="form-control"
+            type="text" 
+            placeholder="url" 
+            name="url" 
+            :class="{ 'is-invalid': form.errors.has('url') }">
+         </input>
+         <has-error :form="form" field="url"></has-error>
+      </div>
+
+      <div class="form-group">
+         <input 
             v-model="form.user_id"
             class="form-control"
             type="text" 
@@ -147,6 +161,7 @@ data () {
         name: '',
         description: '',
         price: '',
+        url:'',
         imgProducto:'',
         user_id: ''
       })
