@@ -107,7 +107,9 @@
             <div class="wrap-img">
                 <img src="images/miperfil/{{ $about->user->imgPerfil }}">
             </div>
-             <ul class="list-inline social-buttons">
+
+            
+             <ul class="list-inline">
     
                 <li>
                   GitHub
@@ -115,7 +117,18 @@
                     <i class="fab fa-github fa-2x"></i>
                   </a>
                 </li>
+
+                <li>
+                  Linkedin
+                  <a href="https://linkedin.com/in/martires-alberto-orozco">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                  </a>
+                </li>
+
+                
+
             </ul>
+        
         </div>
         <div class="col-md-6">
             <div class="row heading">

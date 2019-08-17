@@ -1,123 +1,123 @@
 <template>
     
-    <div class="container mt-4">
+<div class="container mt-4">
 
-<div class="row">
+  <div class="row">
   <div class="col-12">
-    <div class="card">
-      <div class="card-header">
-        <h3 class="card-title">Mis habilidades</h3>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Mis habilidades</h3>
 
-        <div class="card-tools"> 
-           <button class="btn btn-danger" @click="newModal">Agregar<i class="fas fa-file-alt fa-fw"></i></button>
-        </div>
+      <div class="card-tools"> 
+         <button class="btn btn-danger" @click="newModal">Agregar<i class="fas fa-file-alt fa-fw"></i></button>
+      </div>
 
-      </div>
-      <!-- /.card-header -->
-      <div class="card-body table-responsive p-0">
-        <table class="table table-hover">
-          <tbody><tr>
-            <th>Id</th>
-            <th>name</th>
-            <th>description</th>
-            <th>Usuario</th>
-            <th>Editar</th>
-          </tr>
-          
-          <tr v-for="habi in habilidad" :key="habi.id">
-            <td>{{ habi.id }}</td>
-            <td>{{ habi.name }}</td>
-            <th>{{ habi.description }}</th>
-            <th>{{ habi.user_id }}</th>
-          <td>
-              <a href="#" @click="editModal(habi)">
-                  <i class="fas fa-edit blue"></i>
-              </a>
-              
-              <a href="#" @click="deleteHabilidad(habi.id)">
-                  <i class="fas fa-trash red"></i>
-              </a>
-          </td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-      <!-- /.card-body -->
     </div>
-    <!-- /.card -->
+    <!-- /.card-header -->
+    <div class="card-body table-responsive p-0">
+      <table class="table table-hover">
+        <tbody><tr>
+          <th>Id</th>
+          <th>name</th>
+          <th>description</th>
+          <th>Usuario</th>
+          <th>Editar</th>
+        </tr>
+        
+        <tr v-for="habi in habilidad" :key="habi.id">
+          <td>{{ habi.id }}</td>
+          <td>{{ habi.name }}</td>
+          <th>{{ habi.description }}</th>
+          <th>{{ habi.user_id }}</th>
+        <td>
+            <a href="#" @click="editModal(habi)">
+                <i class="fas fa-edit blue"></i>
+            </a>
+            
+            <a href="#" @click="deleteHabilidad(habi.id)">
+                <i class="fas fa-trash red"></i>
+            </a>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <!-- /.card-body -->
   </div>
-</div>
+  <!-- /.card -->
+  </div>
+  </div>
 
-<!-- Modal -->
-<div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="addNew" aria-hidden="true">
+  <!-- Modal -->
+  <div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="addNew" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Agregar Habilidad</h5>
-        <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Habilidad</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <div class="modal-body">
-      
-      <form @submit.prevent="editmode ? updateHabilidad() : crearHabilidad()">
-      
-      <div class="form-group">
-         <input 
-          v-model="form.name" 
-          type="text" 
-          name="name" 
-          placeholder="name" 
-          class="form-control" 
-          :class="{ 'is-invalid': form.errors.has('name') }">
-          <has-error :form="form" field="name"></has-error>
-      </div>
-
-      <div class="form-group">
-         <textarea 
-            v-model="form.description"
-            class="form-control"
-            type="text" 
-            placeholder="description" 
-            name="description" 
-            :class="{ 'is-invalid': form.errors.has('description') }" 
-            rows="3">
-         </textarea>
-         <has-error :form="form" field="description"></has-error>
-      </div>
-
-      <div class="form-group">
-         <input 
-            v-model="form.user_id"
-            class="form-control"
-            type="text" 
-            placeholder="user_id" 
-            name="user_id" 
-            :class="{ 'is-invalid': form.errors.has('user_id') }" 
-            rows="3">
-         </input>
-         <has-error :form="form" field="user_id"></has-error>
-      </div>
-
-      <div class="form-group">
-        <label for="imgServicio">imgServicio</label>
-        <input type="file" @change="updateimgServicio" name="imgServicio" class="form-input">
-      </div>
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button v-show="editmode" type="submit" class="btn btn-dark">Editar Habilidad</button>
-        <button v-show="!editmode" type="submit" class="btn btn-dark">Crear habilidad</button>
-      </div>
-
-      </form> 
-      </div>
-
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" v-show="!editmode" id="addNewLabel">Agregar Habilidad</h5>
+      <h5 class="modal-title" v-show="editmode" id="addNewLabel">Editar Habilidad</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
+
+    <div class="modal-body">
+    
+    <form @submit.prevent="editmode ? updateHabilidad() : crearHabilidad()">
+    
+    <div class="form-group">
+       <input 
+        v-model="form.name" 
+        type="text" 
+        name="name" 
+        placeholder="name" 
+        class="form-control" 
+        :class="{ 'is-invalid': form.errors.has('name') }">
+        <has-error :form="form" field="name"></has-error>
+    </div>
+
+    <div class="form-group">
+       <textarea 
+          v-model="form.description"
+          class="form-control"
+          type="text" 
+          placeholder="description" 
+          name="description" 
+          :class="{ 'is-invalid': form.errors.has('description') }" 
+          rows="3">
+       </textarea>
+       <has-error :form="form" field="description"></has-error>
+    </div>
+
+    <div class="form-group">
+       <input 
+          v-model="form.user_id"
+          class="form-control"
+          type="text" 
+          placeholder="user_id" 
+          name="user_id" 
+          :class="{ 'is-invalid': form.errors.has('user_id') }" 
+          rows="3">
+       </input>
+       <has-error :form="form" field="user_id"></has-error>
+    </div>
+
+    <div class="form-group">
+      <label for="imgServicio">imgServicio</label>
+      <input type="file" @change="updateimgServicio" name="imgServicio" class="form-input">
+    </div>
+    
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+      <button v-show="editmode" type="submit" class="btn btn-dark">Editar Habilidad</button>
+      <button v-show="!editmode" type="submit" class="btn btn-dark">Crear habilidad</button>
+    </div>
+
+    </form> 
+    </div>
+
   </div>
-</div>
+  </div>
+  </div>
 
 </div>
 </template>

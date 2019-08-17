@@ -56,6 +56,7 @@ let routes = [
   { path: '/habilidades', component: require('./components/Habilidades.vue')},
   { path: '/acercademi', component: require('./components/Acercademi.vue')},
   { path: '/certificaciones', component: require('./components/Certificaciones.vue')},
+  
 ]
 
 const router = new VueRouter({
