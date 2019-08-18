@@ -8,7 +8,7 @@ class Product extends Model
 {
     protected $table = 'products';
 
-	protected $fillable = ['name', 'description','url','imgProducto','price', 'user_id'];
+	protected $fillable = ['name', 'description','url','estado','imgProducto','price', 'user_id'];
 
   // Relation with Category
     public function user()

@@ -73847,6 +73847,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -73859,6 +73873,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         description: '',
         price: '',
         url: '',
+        estado: '',
         imgProducto: '',
         user_id: ''
       })
@@ -74020,6 +74035,8 @@ var render = function() {
                       _c("td", [_vm._v(_vm._s(port.imgProducto))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(port.url))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(port.estado))]),
                       _vm._v(" "),
                       _c("td", [_vm._v(_vm._s(port.price))]),
                       _vm._v(" "),
@@ -74303,6 +74320,46 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
+                              value: _vm.form.estado,
+                              expression: "form.estado"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class: {
+                            "is-invalid": _vm.form.errors.has("estado")
+                          },
+                          attrs: {
+                            type: "text",
+                            placeholder: "estado",
+                            name: "estado"
+                          },
+                          domProps: { value: _vm.form.estado },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.form, "estado", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("has-error", {
+                          attrs: { form: _vm.form, field: "estado" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "form-group" },
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
                               value: _vm.form.user_id,
                               expression: "form.user_id"
                             }
@@ -74414,7 +74471,9 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("imgProducto")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Url")]),
+      _c("th", [_vm._v("url")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("estado")]),
       _vm._v(" "),
       _c("th", [_vm._v("price")]),
       _vm._v(" "),

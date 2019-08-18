@@ -31,6 +31,7 @@ class MiPortafolioController extends Controller
              'description' => 'required',
              'user_id' => 'required',
              'price' => 'required',
+             'estado' => 'required',
              'imgProducto' => 'required'
             
         ]);
@@ -52,6 +53,7 @@ class MiPortafolioController extends Controller
             'user_id' => $request['user_id'],
             'price' => $request['price'],
             'url' => $request['url'],
+            'estado' => $request['estado'],
             'imgProducto' => $request['imgProducto'],
         ]);
     }

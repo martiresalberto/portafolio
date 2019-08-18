@@ -38,7 +38,12 @@
 
               <p>{{ $product->description }}</p>
 
-              <a href="{{ $product->url }}"><p class="lead font-weight-bold info">IR A PAGINA: {{ $product->url }}</p></a>
+
+              <a href="{{ $product->url }}"><p class="lead font-weight-bold">Ver pagina: {{ $product->url }}</p></a>
+             
+              <br>
+            
+              <p class="lead font-weight-bold" style="color:blue;">Estado: {{ $product->estado }}</p>
 
               </div>  
 
