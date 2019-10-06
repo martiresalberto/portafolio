@@ -39,7 +39,7 @@ class HabilidadesController extends Controller
             $name = time().'.' .explode('/', explode(':', substr($request->imgServicio, 0, strpos
             ($request->imgServicio, ';')))[1])[1];    
 
-            \Image::make($request->imgServicio)->save(public_path('images/servicios/').$name);      
+            \Image::make($request->imgServicio)->save(storage_path('images/servicios/').$name);      
             $request->merge(['imgServicio' => $name]);
             
 
