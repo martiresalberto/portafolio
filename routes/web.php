@@ -1,6 +1,8 @@
 <?php
 
+
 Route::get('/','portfolioController@index')->name('home');
+
 
 Route::get('detalle-portafolio/{slug}','portfolioController@show')->name('detalle-portafolio');
 
