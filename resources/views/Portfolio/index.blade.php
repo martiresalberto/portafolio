@@ -28,7 +28,6 @@
 
 @foreach($services as $service) 
 
-<div class="row">
 
   <div class="col-sm-4 services-item">
     
@@ -39,7 +38,7 @@
 
   </div>
 
-</div>
+  
 
 @endforeach()
        
