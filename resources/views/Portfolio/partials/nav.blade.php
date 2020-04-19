@@ -1,4 +1,4 @@
-<!-- /////////////////////////////////////////Navigation -->
+ ////Navigation 
     <nav class="navbar navbar-default navbar-fixed-top" style="background-color: black;">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">M.A.O.G.</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Martires Alberto O.</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->

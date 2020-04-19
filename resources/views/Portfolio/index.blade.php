@@ -18,7 +18,6 @@
        <div class="col-lg-12">
           <h2>Mis Habilidades</h2>
           <hr class="line02">
-          <div class="intro">FRONT-END | BACK-END</div>
       </div>
   
   </div>
@@ -50,9 +49,10 @@
 @stop
 
 
+
 @section('portafolio')
 <!-- ////////////Portfolio -->
-<section class="box-content box-style" id="portfolio">
+<section class="box-content box-style-portafolio" id="portfolio">
 
 <div class="container">
     
@@ -64,12 +64,12 @@
         </div>
     </div>
 
+    
     @foreach($products as $product)
     
-    <div class="row">
-       
        <div class="col-md-3 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" data-target="#product{{ $product->id }}">
+  
+       <a class="portfolio-link" data-toggle="modal" data-target="#product{{ $product->id }}">
                 <div class="portfolio-hover">
                     <div class="portfolio-hover-content">
                         <i class="fa fa-eye fa-3x"></i>
@@ -77,12 +77,13 @@
                 </div>
                 <img src="images/portafolio/{{ $product->imgProducto }}" class="img-responsive" alt="">
             </a>
-            
         </div>
+
    
     @endforeach()
     
-    </div>
+
+</div>
 
 </div>
 
@@ -95,7 +96,6 @@
 
 
 
-
 @section('about')
 
 <!-- ////////////About -->
@@ -103,9 +103,9 @@
 <div class="container">
     <div class="row center">
         <div class="col-md-6">
-        @foreach($abouts as $about)
+        @foreach($users as $user)
             <div class="wrap-img">
-                <img src="images/miperfil/{{ $about->user->imgPerfil }}">
+                <img src="images/miperfil/{{ $user->imgPerfil }}">
             </div>
 
             
@@ -134,10 +134,10 @@
             <div class="row heading">
                 <h2>Acerca de Mi</h2>
                 <hr class="line02">
-                <div class="intro">{{ $about->name }}</div>
+                <div class="intro">{{ $user->name }}</div>
             </div>
             <div class="row">
-                <p>{{ $about->description }}</p>
+                <p style="color:rgba(5,5,5,1);">{{ $user->description }}</p>
             </div>
         @endforeach()
         </div>
@@ -148,24 +148,21 @@
 @stop
 
 
-
-
 @section('certification')
-<!-- ////////////Portfolio -->
-<section class="box-content box-style" id="portfolio2">
+<!-- Portfolio -->
+<section class="box-content box-style-certificado" id="portfolio2">
 <div class="container" style="margin-top: 40px;">
     <div class="row heading">
          <div class="col-lg-12">
-            <h2>Mis Certificaciones</h2>
+            <h2>Certificaciones</h2>
             <hr class="line01">
             <div class="intro">Las mejores cosas en la vida no son cosas</div>
         </div>
     </div>
 @foreach($certification as $cert)
-        
-<div class="row">
+
            
-<div class="col-md-4 portfolio-item2">
+<div class="col-md-3 portfolio-item">
     
     <a class="portfolio-link">
         
@@ -215,7 +212,7 @@
 </div>
 
 
-<div class="col-md-6 contact-item">
+<div class="col-md-6 contact-item" style=" color:black;">
     <div class="row">
         <div class="col-sm-12">
         
@@ -270,7 +267,7 @@
         <div class="row">
                 <div class="col-lg-12 text-center">
                     <div id="success"></div>
-                    <button type="submit" class="btn btn-l">Enviar Mensaje</button>
+                    <button type="submit" class="btn btn-l btn-primary">Enviar Mensaje</button>
                 </div>
         </div>
 

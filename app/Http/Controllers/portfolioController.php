@@ -37,7 +37,7 @@ class portfolioController extends Controller
       // ->select('products.id','products.name','products.description','products.price','products.created_at','products.imgProducto','users.name as nombre_usuario')
       // ->orderBy('products.id', 'desc');
      
-      $abouts = About::with('user')->get();
+      $users = User::all();
 
       // $abouts = About::join('users','abouts.user_id','=','users.id')
       // ->select('abouts.id','abouts.name','abouts.description','users.imgPerfil')
@@ -45,7 +45,7 @@ class portfolioController extends Controller
 
        // dd($abouts);
 
-    return view('Portfolio.index',compact('services','products','abouts','certification'));
+    return view('Portfolio.index',compact('services','products','users','certification'));
 
    }
     

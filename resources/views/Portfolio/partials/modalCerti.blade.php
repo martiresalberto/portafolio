@@ -2,7 +2,7 @@
 
  <!-- Modal de Certficados -->
 <div class="modal fade" id="certificado{{ $cert->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Certficado</h5>
@@ -17,19 +17,26 @@
             <div class="row">
               
               <!--Grid column-->
-              <div class="col-md-5">
+              <div class="col-md-7">
                 
 
                 <img src="images/certificados/{{ $cert->imgCertificacion}}" class="img-fluid" alt="">
 
               </div>
               <!--Grid column-->
-              <div class="col-md-7">
+              <div class="col-md-5">
 
               <p class="lead font-weight-bold">{{ $cert->name }}</p>
 
               <p>{{ $cert->description }}</p>
 
+              <p>
+               <a href="">
+               Ver Certifaco
+               </a>
+              </p> 
+
+ 
               </div>  
 
             </div>
