@@ -8,6 +8,9 @@
 
 
 @section('services')
+
+
+
 <!-- ////////////Services -->
 <section class="box-content" id="services">
    
@@ -36,6 +39,7 @@
 
   </div>
 
+</div>
 
 @endforeach()
        
